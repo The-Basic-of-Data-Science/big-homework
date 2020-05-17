@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from digest import OutPut
+from OriginDigest import OutPut
 
 file_prefix = "../afterData/"
 

@@ -5,7 +5,7 @@ import csv
 from tqdm import tqdm
 
 if __name__ == '__main__':
-    with open('../data/test_data.json',encoding='utf-8') as f:
+    with open('../../data/test_data.json', encoding='utf-8') as f:
         res = json.load(f)
 
     commit_of_case = {}
@@ -33,7 +33,7 @@ if __name__ == '__main__':
                         duration = upload['upload_time'] - small
                 time_of_case[cid].append(duration)
     head = ['case_id', '平均做对时间', '平均提交次数']
-    with open('./难度b.csv', 'w',newline="") as file:
+    with open('难度b.csv', 'w', newline="") as file:
         writer = csv.writer(file)
         writer.writerow(head)
         for cid in commit_of_case:

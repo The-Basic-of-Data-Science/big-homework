@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from digest import CaseDigest
+from OriginDigest import CaseDigest
 
 category = '查找算法'
 

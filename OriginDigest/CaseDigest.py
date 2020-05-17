@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from digest import UploadDigest
-from digest import OutPut
+from OriginDigest import UploadDigest
+from OriginDigest import OutPut
 
 cnt_Case = {}
 cnt_Upload = {}

@@ -5,7 +5,7 @@ import numpy as np
 import csv
 from scipy import stats
 
-with open('../data/test_data.json') as f:
+with open('../../data/test_data.json') as f:
     res = json.load(f)
 
 all_score_of_case = {} #某一题，所有人的所有提交的分数
@@ -25,7 +25,7 @@ for uid in res:
 
 head = ['case_id', '所有提交平均分', '所有提交中位数', '所有提交众数', '最终分数平均分', '最终分数中位数', '最终分数众数', '做的人数', '做对人数']
 
-with open('./难度a.csv', 'w') as file:
+with open('难度a.csv', 'w') as file:
     writer = csv.writer(file)
     writer.writerow(head)
     for cid in all_score_of_case:

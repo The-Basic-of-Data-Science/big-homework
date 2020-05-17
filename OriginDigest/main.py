@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import json
-from digest import UserDigest
-from digest import CaseDigest
-from digest import OutPut
+from OriginDigest import UserDigest
+from OriginDigest import CaseDigest
+from OriginDigest import OutPut
 
 data = {}
 file1 = "../data/sample.json"
