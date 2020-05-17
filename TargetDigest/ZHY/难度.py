@@ -32,7 +32,7 @@ def writeCsv(filename = '难度.csv'):
             writer.writerow(upload)
 
 if __name__ == '__main__':
-    loadJson('../../data/test_data.json')
+    loadJson('../../Data/test_data.json')
     keys = list(data.keys())
     for user_id in keys:
         getUserUpload(data[user_id])

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from OriginDigest import OutPut
 
-file_prefix = "../afterData/"
+file_prefix = "../AfterData/"
 
 def filter_Record(record):
     # 添加条件计算
