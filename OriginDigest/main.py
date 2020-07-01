@@ -5,8 +5,8 @@ from OriginDigest import CaseDigest
 from OriginDigest import OutPut
 
 data = {}
-file1 = "../Data/sample.json"
-file2 = "../Data/test_data.json"
+file1 = "../JSON/sample.json"
+file2 = "../JSON/test_data.json"
 
 def load(fileName):
     # 加载数据到内存

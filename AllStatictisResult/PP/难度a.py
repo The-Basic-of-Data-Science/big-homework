@@ -5,7 +5,7 @@ import numpy as np
 import csv
 from scipy import stats
 
-with open('../../Data/test_data.json') as f:
+with open('../../OurModel/test_data.json') as f:
     res = json.load(f)
 
 all_score_of_case = {} #某一题，所有人的所有提交的分数

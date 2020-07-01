@@ -61,7 +61,7 @@ def get_cheat_time():
     for row in cr:
         cheat_time[",".join(row[0:2])] = row[2]
 
-with open("../Data/sample.json") as f:
+with open("../JSON/sample.json") as f:
     rd = json.load(f)
     # raw_data, 这里我先用脏数据
 get_difficulty(MIN_DIFFICULTY, MAX_DIFFICULTY) #获取难度，映射在 [MIN_DIFFICULTY, MAX_DIFFICULTY] 上

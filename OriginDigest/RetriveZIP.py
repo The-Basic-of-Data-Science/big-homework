@@ -60,7 +60,7 @@ def getAUserRecords(user):
 
 
 if __name__ == '__main__':
-    f = open("../Data/sample.json", encoding ='utf-8')
+    f = open("../JSON/sample.json", encoding ='utf-8')
     res = f.read()
     data = json.loads(res)
     userIDS = list(data.keys())

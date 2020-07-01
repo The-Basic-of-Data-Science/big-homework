@@ -5,7 +5,7 @@ import csv
 from tqdm import tqdm
 
 if __name__ == '__main__':
-    with open('../../Data/test_data.json', encoding='utf-8') as f:
+    with open('../../OurModel/test_data.json', encoding='utf-8') as f:
         res = json.load(f)
 
     commit_of_case = {}
