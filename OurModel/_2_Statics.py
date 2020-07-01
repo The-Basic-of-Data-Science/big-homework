@@ -165,7 +165,7 @@ def one_action_statistics(user_id, case_id, scores,final_score, test_cases_numbe
 def action_statistics(source, output):
     '''
     我们使用OurModel/CsvResult/detail.csv中数据再次之前我们3部分的运算,写入到CsvStatistic下的 用户行为统计.csv文件夹下
-    表格表头:user_id,case_id,提交次数，每次分数(|分隔，第一个是第一次有效提交分数)，分数变化，最终有效分数, 用例数量
+    表格表头:user_id,case_id,提交次数，每次分数(|分隔，第一个是第一次有效提交分数)，分数变化，最终有效分数, 用例数量，TODO 编码放歌分数
     :return:
     '''
     # 预加载数据并处理

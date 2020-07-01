@@ -13,12 +13,18 @@ def checkIfElse(text):
     检查该文本是否满足if-else-print阈值>=3?
     :param text:
     :return: boolean
+    不要求检测出来所有的，只要求检测来大部分
+    if print else print
+    if print if print
+    if printelif print elif print
+    if*:\n(4个 ) print(*)
     '''
     return True
 
 def checkSpecific(text):
     '''
     检查该文本是否使用了特殊的库
+    eval("open")、random、open、exec
     :param text:
     :return: boolean
     '''

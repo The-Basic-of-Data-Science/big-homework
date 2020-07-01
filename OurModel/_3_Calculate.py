@@ -36,7 +36,7 @@ def get_difficulty(x2, y2):
         cmn = (100 - scores[case][2]) / 100 #众数换算难度
         rte = (scores[case][3] - scores[case][4]) / scores[case][4] #（做错人数：做对人数）换算难度
         tim = scores[case][5] / scores[case][6] #（平均提交次数：用例总数）换算难度
-        # TODO 这里只是单纯地加起来，后期再调试
+        # TODO 这里只是单纯地加起来，后期再调试 PCA AHP
         raw_difficulty[case] = avg + med + cmn + rte + tim
     
     x1 = min(raw_difficulty.values) #最小生难度
