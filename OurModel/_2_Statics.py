@@ -77,8 +77,6 @@ def case_score_statistics(case_id, scores, user_ids, test_cases_number):
             number_cnt[num] += 1
     keys = list(number_cnt.keys())
     keys.sort(reverse = True, key= lambda x : number_cnt[x])
-    for key in keys:
-        print(number_cnt[key])
 
     maxNumber = number_cnt[keys[0]]
     mode_data = []
@@ -228,8 +226,11 @@ def arrayToCsv(filename, arrays):
         for line in arrays:
             writer.writerow(line)
 
-if __name__ == '__main__':
+def my_statistics():
     print("score_statistics")
     score_statistics()
     print("action_statistics")
     action_statistics()
+
+if __name__ == '__main__':
+    my_statistics()

@@ -7,12 +7,6 @@ import csv
 brief_result = [['user_id', 'case_id', 'upload_id']]
 # ['user_id', 'case_id', 'case_type','final_score','upload_id','code_url','upload_score','upload_time']
 detail_result = [['user_id', 'case_id', 'case_type','final_score','upload_id','code_url','upload_score','upload_time']]
-# 目录信息
-# 源文件位置
-source = '../JSON/test_data.json'
-basic = "./Python"
-# 输出位置
-output = './CsvResult'
 
 def checkIfElse(text):
     '''
@@ -41,7 +35,7 @@ def validToCsv(user_id, case_id, upload):
     upload_id = upload.split("_")[0] # 加载upload_id
     brief_result.append([user_id, case_id, upload_id])
 
-def checkOneValid(user_id, case_id, upload):
+def checkOneValid(user_id, case_id, upload, python_source):
     '''
     1. 检查一个提交的有效性,从url拿到ZIP，再拿到Python中的文本
     使用checkIfElse 和 checkSpecific
@@ -51,7 +45,7 @@ def checkOneValid(user_id, case_id, upload):
     :param upload: Python的文件名
     :return: boolean
     '''
-    with open(basic + "/" + user_id + "/" + case_id + "/" + upload, 'r') as f:
+    with open(python_source + "/" + user_id + "/" + case_id + "/" + upload, 'r') as f:
         try:
             text = f.read()
             # 根据情况进行过滤
@@ -60,27 +54,31 @@ def checkOneValid(user_id, case_id, upload):
         except Exception as e:
             #一般是不能通过编译，英文符号
             print(str(e))
-            print(basic + "/" + user_id + "/" + case_id + "/" + upload)
+            print(python_source + "/" + user_id + "/" + case_id + "/" + upload)
     return True
 
-def checkAllUploads(filename = source):
+def checkAllUploads(python_source, output):
     '''
     对本地已经加载出来的Python文件夹中的用户提交的数据进行统计
     本地的存储为为Python/user_id/case_id/xxx.py
     :param filename:json文件
+    :param python_source valid-Python存放的位置
+    :param output 输出文件夹
     :return: boolean
     '''
-    user_ids = os.listdir(basic)
+    user_ids = os.listdir(python_source)
     for user_id in user_ids:
         # 每一个用户
-        case_ids = os.listdir(basic + "/" + user_id)
+        if(user_id == 'main.py'):
+            continue
+        case_ids = os.listdir(python_source + "/" + user_id)
         for case_id in case_ids:
             # 每一道题目
-            uploads = os.listdir(basic + "/" + user_id + "/" + case_id)
+            uploads = os.listdir(python_source + "/" + user_id + "/" + case_id)
             for upload in uploads:
                 # 每一次提交
-                checkOneValid(user_id, case_id, upload)
-    refreshCSV('brief', brief_result)
+                checkOneValid(user_id, case_id, upload, python_source)
+    refreshCSV('brief', brief_result, output)
 
 def filter(alpha = 0.8):
     '''
@@ -91,11 +89,12 @@ def filter(alpha = 0.8):
     '''
     return True
 
-def refreshCSV(filename, source):
+def refreshCSV(filename, source, output):
     '''
     将source中的数据格式化到CsvResult/filename.csv中去
     :param filename: 文件名
     :param source: 源文件
+    :param output: 输出文件夹
     :return:
     '''
     if(not os.path.exists(output)):
@@ -106,7 +105,7 @@ def refreshCSV(filename, source):
             if(len(br) != 0 and len(br[0]) != 0):
                 writer.writerow(br)
 
-def briefToDetail():
+def briefToDetail(source, output):
     # 加载出Json格式的data数据
     with open(source, 'r', encoding='utf-8') as f:
         res = f.read()
@@ -125,7 +124,7 @@ def briefToDetail():
             result = getOneLine(user['cases'], line[0],line[1], line[2])
             if(len(result) != 0):
                 detail_result.append(result)
-    refreshCSV('detail',detail_result)
+    refreshCSV('detail',detail_result, output)
 
 def getOneLine(cases, user_id, case_id, upload_id):
     '''
@@ -154,9 +153,11 @@ def getOneLine(cases, user_id, case_id, upload_id):
     print('failed to find!')
     return []
 
+def findValid(python_source, source, output):
+    checkAllUploads(python_source, output)
+    briefToDetail(source, output)
+    filter()
 
 if __name__ == '__main__':
     # 检查每一个应用的有效性
-    checkAllUploads()
-    briefToDetail()
-    filter()
+    findValid("./Python", '../JSON/test_data.json', './CsvResult')

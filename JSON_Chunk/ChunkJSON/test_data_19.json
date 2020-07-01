@@ -1,0 +1,21 @@
+{
+    "60822": {
+        "user_id": 60822,
+        "cases": [
+            {
+                "case_id": "2542",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6700\u957f\u8fde\u7eed\u5e8f\u5217_1580575865453.zip",
+                "final_score": 0,
+                "upload_records": [
+                    {
+                        "upload_id": 234574,
+                        "upload_time": 1581949768102,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4278/60822/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%97_1581949767318.zip",
+                        "score": 0.0
+                    }
+                ]
+            }
+        ]
+    }
+}
