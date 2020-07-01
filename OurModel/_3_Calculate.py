@@ -50,7 +50,8 @@ def get_difficulty(x2, y2):
         difficulty[case] = raw_difficulty[case] * k + b
 
 def get_final_score():
-    cr = csv.reader(open("CsvResult/用户行为统计.csv"), delimiter=",")
+    # TODO
+    cr = csv.reader(open("./Statistic/action_statistics.csv"), delimiter=",")
     next(cr)
     for row in cr:
         final_score[",".join(row[0:2])] = max(list(map(int, row[3].split("|"))))
@@ -64,6 +65,7 @@ def get_cheat_time():
 with open("../JSON/sample.json") as f:
     rd = json.load(f)
     # raw_data, 这里我先用脏数据
+
 get_difficulty(MIN_DIFFICULTY, MAX_DIFFICULTY) #获取难度，映射在 [MIN_DIFFICULTY, MAX_DIFFICULTY] 上
 get_final_score() #获取每人每题最终得分
 get_cheat_time()

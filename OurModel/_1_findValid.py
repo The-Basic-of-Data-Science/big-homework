@@ -48,8 +48,8 @@ def checkOneValid(user_id, case_id, upload, python_source):
     with open(python_source + "/" + user_id + "/" + case_id + "/" + upload, 'r') as f:
         try:
             text = f.read()
-            # 根据情况进行过滤
-            if(checkIfElse(text) and checkIfElse(text)):
+            # 根据情况进行过滤 TODO
+            if(checkIfElse(text) and checkSpecific(text)):
                 validToCsv(user_id,case_id,upload)
         except Exception as e:
             #一般是不能通过编译，英文符号
@@ -82,6 +82,7 @@ def checkAllUploads(python_source, output):
 
 def filter(alpha = 0.8):
     '''
+    TODO
     从OurModel/JSON/filename.json中加载数据，筛选出80%的数据，写入到OurModel/AfterData/filename.json文件中
     :param alpha:我们统计的数据占整体的比例
     alpha [0,1],比如alpha = 0.8 -> 我们选择有效数据中间80%的数据

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import csv
 import urllib
 import zipfile
@@ -7,10 +6,6 @@ import os
 import json
 import statistics
 from tqdm import tqdm
-import numpy as np
-
-basic = "./CsvResult/detail.csv"
-output = "./Statistic/"
 
 def local_rm(dirpath):
     '''
@@ -106,7 +101,7 @@ def case_score_statistics(case_id, scores, user_ids, test_cases_number):
 
     return result
 
-def score_statistics():
+def score_statistics(source, output):
     '''
     我们使用OurModel/CsvResult/detail.csv中数据再次之前我们3部分的运算,写入到CsvStatistic下的 分数统计.csv文件夹下
     表格表头:case_id,平均分，中位数，众数，尝试人数，做对人数，平均提交次数，用例总数
@@ -120,7 +115,7 @@ def score_statistics():
     test_cases = {}
     case_id_index = 1
     # 加载基本数据
-    with open(basic,'r') as f:
+    with open(source, 'r') as f:
         reader = csv.reader(f)
         for line in tqdm(reader):
             if(line[0] == 'user_id'):
@@ -143,7 +138,7 @@ def score_statistics():
         if(len(temp) == 8):
             result.append(temp)
     # 持久化
-    arrayToCsv("score_statistics", result)
+    arrayToCsv("score_statistics", result, output)
 
 def one_action_statistics(user_id, case_id, scores,final_score, test_cases_number):
     '''
@@ -167,7 +162,7 @@ def one_action_statistics(user_id, case_id, scores,final_score, test_cases_numbe
     result.append(test_cases_number)
     return result
 
-def action_statistics():
+def action_statistics(source, output):
     '''
     我们使用OurModel/CsvResult/detail.csv中数据再次之前我们3部分的运算,写入到CsvStatistic下的 用户行为统计.csv文件夹下
     表格表头:user_id,case_id,提交次数，每次分数(|分隔，第一个是第一次有效提交分数)，分数变化，最终有效分数, 用例数量
@@ -176,7 +171,7 @@ def action_statistics():
     # 预加载数据并处理
     result = [['user_id', 'case_id', 'upload_times', 'every_scores'
                       , 'scores_change', 'final_score', 'test_cases_number']]
-    with open(basic,'r') as f:
+    with open(source,'r') as f:
         reader = csv.reader(f)
         temp = []
         for line in tqdm(reader):
@@ -209,10 +204,9 @@ def action_statistics():
                 result.append(result_temp)
             else:
                 print('7 Error!')
-    arrayToCsv('action_statistics',result)
+    arrayToCsv('action_statistics',result, output)
 
-
-def arrayToCsv(filename, arrays):
+def arrayToCsv(filename, arrays, output):
     '''
     将数组加载到CSV
     :param filename: 文件名（不含后缀)
@@ -226,11 +220,19 @@ def arrayToCsv(filename, arrays):
         for line in arrays:
             writer.writerow(line)
 
-def my_statistics():
+def my_statistics(source, output):
     print("score_statistics")
-    score_statistics()
+    score_statistics(source, output)
     print("action_statistics")
-    action_statistics()
+    action_statistics(source, output)
+
+'''
+TODO
+面向用例
+表头:user_id case_id 次数
+'''
 
 if __name__ == '__main__':
-    my_statistics()
+    source = "./CsvResult/detail.csv"
+    output = "./Statistic/"
+    my_statistics(source, output)

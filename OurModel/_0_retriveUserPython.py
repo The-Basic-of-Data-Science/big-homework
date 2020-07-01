@@ -33,6 +33,7 @@ def retriveAllUploads(source, output):
     '''
     拉取指定json文件中的所有的Python文件
     :param source:json文件
+    :param output:python文件的下载到哪
     :return: void
     '''
     user_number = 0
