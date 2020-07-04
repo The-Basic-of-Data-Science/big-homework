@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 from OurModel import _0_retrievePython
 from OurModel import _1_findValid
-from OurModel import _2_statics
+from OurModel import _2_Statisic
 import time
 import threading
 
-'''
-下载
-'''
 class chunk_thread(threading.Thread):
     def __init__(self, thread_id, name, chunk_number):
         threading.Thread.__init__(self)
@@ -15,15 +12,15 @@ class chunk_thread(threading.Thread):
         self.name = name
         self.chunk_number = chunk_number
         self.source = '../JSON_chunk/ChunkJSON/test_data_' + chunk_number + '.json'
-        self.python_source = '../OurModelOutPut/test_data_' + chunk_number + '/Python/'
-        self.valid_csv_output = '../OurModelOutPut/test_data_' + chunk_number + '/CsvResult'
-        self.statistics_output = '../OurModelOutPut/test_data_' + chunk_number + '/Statistic/'
+        self.python_source = '../OurModelOutPut/python_source/test_data_' + chunk_number + '/Python/'
+        self.valid_csv_output = '../OurModelOutPut/python_source/test_data_' + chunk_number + '/CsvResult'
+        self.statistics_output = '../OurModelOutPut/python_source/test_data_' + chunk_number + '/Statistic/'
 
     def run(self):
         start = time.time()
         print("开始线程{}:{}".format(self.name, self.time_format(start)))
         # 线程执行下载
-        self.chunk_retrieve()
+        self.chunk_valid()
         end = time.time()
         print("退出线程{}:{}".format(self.name, self.time_format(end)))
         duration = end - start
@@ -70,8 +67,8 @@ class chunk_thread(threading.Thread):
 
     def chunk_statistics(self):
         print("chunk_number:{}".format(self.chunk_number))
-        my_statistics = _2_statics.StatisticsClass(self.chunk_number,
-                                                   self.valid_csv_output + "/detail.csv", self.statistics_output)
+        my_statistics = _2_Statisic.StatisticsClass(self.chunk_number,
+                                                    self.valid_csv_output + "/detail.csv", self.statistics_output)
         my_statistics.my_statistics()
 
 def start_thread_group(chunk_numbers):
@@ -93,5 +90,5 @@ def start_thread_group(chunk_numbers):
 
 if __name__ == '__main__':
     # 建议一次执行偶数个线程
-    start_thread_group([x for x in range(18, 20)])
+    start_thread_group([x for x in range(17, 18)])
     # start_thread_group([8, 9])

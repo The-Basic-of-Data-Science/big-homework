@@ -113,7 +113,7 @@ class FindValidClass:
         user_ids = os.listdir(self.python_source)
         for user_id in user_ids:
             # 每一个用户
-            if(user_id == 'main.py'):
+            if(not os.path.isdir(self.python_source + "/" + user_id)):
                 continue
             case_ids = os.listdir(self.python_source + "/" + user_id)
             for case_id in case_ids:

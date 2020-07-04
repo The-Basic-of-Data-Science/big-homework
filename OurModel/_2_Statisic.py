@@ -110,7 +110,7 @@ class StatisticsClass:
 
     def cases_score_statistics(self):
         '''
-        我们使用OurModel/CsvResult/detail.csv中数据再次之前我们3部分的运算,写入到CsvStatistic下的 分数统计.csv文件夹下
+        我们使用${source}中数据再次之前我们3部分的运算,写入到Statistic下的 分数统计.csv文件夹下
         表格表头:case_id,平均分，中位数，众数，尝试人数，做对人数，平均提交次数，用例总数
         :return:
         '''
@@ -241,5 +241,5 @@ TODO
 if __name__ == '__main__':
     source = "./CsvResult/detail.csv"
     output = "./Statistic/"
-    temp = StatisticsClass("temp", source,output)
+    temp = StatisticsClass("temp", source, output)
     temp.my_statistics()
