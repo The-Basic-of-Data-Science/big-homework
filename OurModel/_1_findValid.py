@@ -3,30 +3,58 @@
 import json
 import os
 import csv
+import re
 
-
+'''
+将有效的提交写入到brief中去
+将有效的提交的详情写入到detail.csv
+'''
 class FindValidClass:
     def __init__(self, name, python_source, source, output):
-        self.brief_result = [['user_id', 'case_id', 'upload_id']]
-        self.detail_result = [['user_id', 'case_id', 'case_type', 'final_score'
-                                  , 'upload_id', 'code_url', 'upload_score', 'upload_time']]
         self.name = name
         self.python_source = python_source
         self.source = source
         self.output = output
+        self.brief_result = [['user_id', 'case_id', 'upload_id']]
+        self.detail_result = [['user_id', 'case_id', 'case_type', 'final_score'
+                                  , 'upload_id', 'code_url', 'upload_score', 'upload_time']]
 
     def check_if_else(self,text):
         '''
         检查该文本是否满足if-else-print阈值>=3?
         :param text:
-        :return: boolean
+        :return: boolean True没问题
         不要求检测出来所有的，只要求检测来大部分
         if print else print
         if print if print
-        if printelif print elif print
+        if print elif print elif print
         if*:\n(4个 ) print(*)
         '''
+        patterns = [re.compile("if.*:\n    print.*\nelif.*:\n    print.*\nelse.*:\n    print.*"),
+                    re.compile("if.*:\n    print.*\nelif.*:\n    print.*\nelif.*:\n    print.*"),
+                    re.compile("if.*:\n    print.*\nif.*:\n    print.*\nif.*:\n    print.*")]
+
+        for pattern in patterns:
+            result = re.search(pattern, text) == None # 非从头匹配
+            if(not result):
+                return result
         return True
+
+    def check_too_short(self, text):
+        '''
+        检查提交的代码是否过短 + print
+        :return: boolean 过短且为print输出true
+        '''
+        text_split = text.split('\n')
+        specific_words = ["print", "eval(\"print\")"]
+        for line in text_split:
+            is_print = False
+            for word in specific_words:
+                if(word in line):
+                    is_print = True
+            if(not is_print):
+                return True
+        return False
 
     def check_specific(self,text):
         '''
@@ -35,6 +63,10 @@ class FindValidClass:
         :param text:
         :return: boolean
         '''
+        specific_words = ["eval(\"open\")", "random", "open", "exec"]
+        for word in specific_words:
+            if(word in text):
+                return False
         return True
 
     def load_to_csv(self,user_id, case_id, upload):
@@ -61,8 +93,7 @@ class FindValidClass:
         with open(self.python_source + "/" + user_id + "/" + case_id + "/" + upload, 'r') as f:
             try:
                 text = f.read()
-                # 根据情况进行过滤 TODO
-                if self.check_if_else(text) and self.check_specific(text):
+                if self.check_if_else(text) and self.check_specific(text) and self.check_too_short(text):
                     self.load_to_csv(user_id,case_id,upload)
             except Exception as e:
                 # 一般是不能通过编译，英文符号
@@ -175,4 +206,4 @@ class FindValidClass:
 if __name__ == '__main__':
     # 检查每一个应用的有效性
     temp = FindValidClass("temp", "./Python", '../JSON/test_data.json', './CsvResult')
-    temp.findValid()
+
