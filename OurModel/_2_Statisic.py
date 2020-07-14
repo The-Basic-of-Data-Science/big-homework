@@ -7,7 +7,6 @@ import json
 import statistics
 from tqdm import tqdm
 
-
 class StatisticsClass:
     def __init__(self, name, source, output):
         self.name = name
