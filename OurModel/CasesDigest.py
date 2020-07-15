@@ -71,9 +71,9 @@ class CaseDigestClass:
         if not os.path.exists(self.output):
             os.makedirs(self.output)
         print("Brief Union!")
-        self.all_cases_by_type("brief")
+        # self.all_cases_by_type("brief")
         print("Detail Union!")
-        self.all_cases_by_type('detail')
+        # self.all_cases_by_type('detail')
         print("Statistics for Cases!")
         self.cases_statistics()
 

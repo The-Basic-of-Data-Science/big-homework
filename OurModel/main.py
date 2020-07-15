@@ -22,7 +22,7 @@ class chunk_thread(threading.Thread):
         start = time.time()
         print("开始线程{}:{}".format(self.name, self.time_format(start)))
         # 线程检查
-        self.chunk_valid()
+        self.chunk_statistics()
         end = time.time()
         print("退出线程{}:{}".format(self.name, self.time_format(end)))
         duration = end - start
@@ -126,6 +126,6 @@ def local_rm(dirpath):
 
 if __name__ == '__main__':
     # 建议一次执行偶数个线程
-    # start_thread_group([x for x in range(1,20)])
+    start_thread_group([x for x in range(1,2)])
     # start_thread_group([8, 9])
-    clear_py_cache()
+    # clear_py_cache()

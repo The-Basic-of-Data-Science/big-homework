@@ -6,6 +6,7 @@ import os
 import json
 import statistics
 from tqdm import tqdm
+import urllib.request
 
 class StatisticsClass:
     def __init__(self, name, source, output):
@@ -93,8 +94,8 @@ class StatisticsClass:
 
         # 做对人数
         correct_number = 0
-        for x in user_ids:
-            if(user_ids[x] == '100.0'):
+        for user_id in user_ids:
+            if(eval(user_ids[user_id]) == 100):
                 correct_number += 1
         result.append(correct_number)
 
