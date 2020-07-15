@@ -18,29 +18,29 @@ import numpy as np
 usage_count = {} #每题用例数量
 difficulty = {} #难度
 final_score = {} #每人每题的最终得分，键名为 "uid,cid"
-cheat_time = {} #每人每题的面向用例数，键名为 "uid,cid"
+valid_rate = {} #每人每题的有效提交率，键名为 "uid,cid"
 
 def get_difficulty(x2, y2):
     scores = {} #读取分数文件
     raw_difficulty = {} #生难度
 
-    cr = csv.reader(open("CsvResult/分数统计.csv"), delimiter=",")
+    cr = csv.reader(open("../OurModelOutPut/Cases/score_statistics.csv"), delimiter=",")
     next(cr)
     for row in cr:
         scores[row[0]] = row[1:]
         usage_count[row[0]] = row[7]
     
     for case in scores:
-        avg = (100 - scores[case][0]) / 100 #平均数换算难度
-        med = (100 - scores[case][1]) / 100 #中位数换算难度
-        cmn = (100 - scores[case][2]) / 100 #众数换算难度
-        rte = (scores[case][3] - scores[case][4]) / scores[case][4] #（做错人数：做对人数）换算难度
-        tim = scores[case][5] / scores[case][6] #（平均提交次数：用例总数）换算难度
+        avg = (100 - float(scores[case][0])) / 100 #平均数换算难度
+        med = (100 - float(scores[case][1])) / 100 #中位数换算难度
+        cmn = (100 - max(list(map(float, scores[case][2].split('|'))))) / 100 #众数换算难度
+        rte = (int(scores[case][3]) - int(scores[case][4])) / int(scores[case][4]) #（做错人数：做对人数）换算难度
+        tim = float(scores[case][5]) / int(scores[case][6]) #（平均提交次数：用例总数）换算难度
         # TODO 这里只是单纯地加起来，后期再调试 PCA AHP
         raw_difficulty[case] = avg + med + cmn + rte + tim
     
-    x1 = min(raw_difficulty.values) #最小生难度
-    y1 = max(raw_difficulty.values) #最大生难度
+    x1 = min(raw_difficulty.values()) #最小生难度
+    y1 = max(raw_difficulty.values()) #最大生难度
 
     # TODO 这里用的直线的映射，是否有其他关系，待调试
     k = (y2 - x2) / (y1 - x1)
@@ -51,24 +51,24 @@ def get_difficulty(x2, y2):
 
 def get_final_score():
     # TODO
-    cr = csv.reader(open("./Statistic/action_statistics.csv"), delimiter=",")
+    cr = csv.reader(open("../OurModelOutPut/Cases/cases_detail.csv", encoding = 'gb2312'), delimiter=",")
     next(cr)
     for row in cr:
-        final_score[",".join(row[0:2])] = max(list(map(int, row[3].split("|"))))
+        final_score[",".join(row[0:2])] = float(row[3])
 
-def get_cheat_time():
-    cr = csv.reader(open("CsvResult/面向用例.csv"), delimiter=",")
+def get_valid_rate():
+    cr = csv.reader(open("../OurModelOutPut/Valid/valid.csv"), delimiter=",")
     next(cr)
     for row in cr:
-        cheat_time[",".join(row[0:2])] = row[2]
+        valid_rate[",".join(row[0:2])] = float(row[4])
 
-with open("../JSON/sample.json") as f:
+with open("../JSON/test_data.json") as f:
     rd = json.load(f)
     # raw_data, 这里我先用脏数据
 
 get_difficulty(MIN_DIFFICULTY, MAX_DIFFICULTY) #获取难度，映射在 [MIN_DIFFICULTY, MAX_DIFFICULTY] 上
 get_final_score() #获取每人每题最终得分
-get_cheat_time()
+get_valid_rate()
 
 def score(uid, cid):
     '''
@@ -79,7 +79,12 @@ def score(uid, cid):
     '''
     # TODO 得到weight
     weight = 1
-    return final_score[",".join([uid, cid])] * weight
+    if ",".join([uid, cid]) in final_score:
+        print("最终得分=" + str(final_score[",".join([uid, cid])]) + " 权重=" + str(weight))
+        return final_score[",".join([uid, cid])] * weight
+    else:
+        print(",".join([uid, cid]) + "的最终成绩缺失")
+        return 0
 
 def style(uid, cid):
     '''
@@ -92,16 +97,18 @@ def style(uid, cid):
     '''
     ss = STYLE_RATE * 100
     # TODO 计算风格分
+    print("编码风格分=" + str(ss))
     return ss
 
 def qScore(uid, cid):
     '''
-    题目分=（做题分*题目难度+编码风格分）*（不面向用例的比例）
+    题目分=（做题分*题目难度+编码风格分）*（有效提交比例）
     数据来源:其他方法，OurModel/CsvResult下的面向用例.csv
     :return:一道题目的最终标准得分
     '''
     scr = score(uid, cid) * difficulty[cid] + style(uid, cid)
-    rte = (usage_count[cid] - cheat_time[",".join([uid, cid])]) / usage_count[cid]
+    rte = valid_rate[",".join([uid, cid])]
+    print("（做题分*题目难度+编码风格分）=" + str(scr) + " （有效提交比例）" + str(rte))
     return scr * rte
 
 def userScore(uid):
@@ -116,8 +123,12 @@ def userScore(uid):
         return
     score = 0
     for case in rd[uid]["cases"]: #遍历此人交过的每道题目
-        score += qScore(uid, case["case_id"]) #加上这题的做题分
+        print(",".join([uid, case["case_id"]]))
+        t = qScore(uid, case["case_id"])
+        print("题目分为" + str(t))
+        score += t #加上这题的做题分
+        print()
     return score
 
 if __name__ == '__main__':
-    userScore('3544')
+    print(userScore('60699'))
