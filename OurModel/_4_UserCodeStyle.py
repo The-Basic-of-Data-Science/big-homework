@@ -202,5 +202,6 @@ if __name__ == '__main__':
     # 朱睿 start_thread_group([x for x in range(10, 20)]) 建议分为10,14|14,17|17,20跑完
     # 成浩鹏 start_thread_group([x for x in range(20, 30)]) 建议分为20,24|24,27|27,30跑完
     # 张洪胤负责剩下的部分
-    # start_thread_group([x for x in range(180, 185)])
-    unit()
+    start_thread_group([x for x in range(17, 20)])
+    # unit()
+
