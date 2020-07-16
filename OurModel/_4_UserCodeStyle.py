@@ -191,7 +191,7 @@ def unit():
             reader = csv.reader(f)
             for line in reader:
                 temp.append(line)
-    with open(path + "/union/user_result_30000_36421.csv",'w',newline="") as f2:
+    with open(path + "/union/user_result_0_20000.csv",'w',newline="") as f2:
         writer = csv.writer(f2)
         for line in temp:
             writer.writerow(line)
@@ -202,6 +202,6 @@ if __name__ == '__main__':
     # 朱睿 start_thread_group([x for x in range(10, 20)]) 建议分为10,14|14,17|17,20跑完
     # 成浩鹏 start_thread_group([x for x in range(20, 30)]) 建议分为20,24|24,27|27,30跑完
     # 张洪胤负责剩下的部分
-    start_thread_group([x for x in range(17, 20)])
-    # unit()
+    # start_thread_group([x for x in range(17, 20)])
+    unit()
 
