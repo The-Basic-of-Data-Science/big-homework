@@ -149,7 +149,7 @@ class StatisticsClass:
         # 持久化
         self.list_to_csv("score_statistics", result)
 
-    def usercase_action_statistics(self, user_id, case_id, scores,final_score, test_cases_number):
+    def usercase_action_statistics(self, user_id, case_id, scores,final_score):
         '''
         处理一个用户的一个题目的情况
         :param user_id:
@@ -168,18 +168,18 @@ class StatisticsClass:
         change_score_str = '|'.join(list(map(str,change_score)))
         result.append(change_score_str)
         result.append(final_score)
-        result.append(test_cases_number)
+        # result.append(test_cases_number)
         return result
 
     def action_statistics(self):
         '''
         我们使用OurModel/CsvResult/detail.csv中数据再次之前我们3部分的运算,写入到CsvStatistic下的 用户行为统计.csv文件夹下
-        表格表头:user_id,case_id,提交次数，每次分数(|分隔，第一个是第一次有效提交分数)，分数变化，最终有效分数, 用例数量，TODO 编码放歌分数
+        表格表头:user_id,case_id,提交次数，每次分数(|分隔，第一个是第一次有效提交分数)，分数变化，最终有效分数
         :return:
         '''
         # 预加载数据并处理
         result = [['user_id', 'case_id', 'upload_times', 'every_scores'
-                          , 'scores_change', 'final_score', 'test_cases_number']]
+                          , 'scores_change', 'final_score']]
         temps_input = []
         with open(self.source, 'r',encoding='gbk') as f:
             reader = csv.reader(f)
@@ -207,22 +207,22 @@ class StatisticsClass:
                     for t in temp:
                         scores.append(t[6])
                     result_temp = self.usercase_action_statistics(temp[0][0], temp[0][1]
-                                                        , scores, temp[0][3], self.get_tests_number(temp[0][5]))
-                    if(len(result_temp) == 7):
+                                                        , scores, temp[0][3])
+                    if(len(result_temp) == 6):
                         result.append(result_temp)
                     else:
-                        print('7 Error!')
+                        print('6 Error!')
                     temp = [line]
         if(len(temp) != 0):
             scores = []
             for t in temp:
                 scores.append(t[6])
             result_temp = self.usercase_action_statistics(temp[0][0], temp[0][1],
-                                                     scores, temp[0][3], self.get_tests_number(temp[0][5]))
-            if (len(result_temp) == 7):
+                                                     scores, temp[0][3])
+            if (len(result_temp) == 6):
                 result.append(result_temp)
             else:
-                print('7 Error!')
+                print('6 Error!')
         self.list_to_csv('action_statistics',result)
 
     def list_to_csv(self, filename, arrays):
