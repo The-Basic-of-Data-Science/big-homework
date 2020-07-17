@@ -62,7 +62,7 @@ def get_valid_rate():
     for row in cr:
         valid_rate[",".join(row[0:2])] = float(row[4])
 
-with open("../JSON/test_data.json") as f:
+with open("../JSON/test_data.json", 'r', encoding='utf-8') as f:
     rd = json.load(f)
     # raw_data, 这里我先用脏数据
 

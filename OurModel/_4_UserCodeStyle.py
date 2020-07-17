@@ -163,7 +163,7 @@ def start_thread_group(chunk_numbers):
     thread_group = []
     for chunk_number in chunk_numbers:
         thread = user_code_thread(chunk_number, "Thread-" + str(chunk_number)
-                                  , 200 * chunk_number, 200*(chunk_number + 1))
+                                  , 100 * chunk_number, 100*(chunk_number + 1))
         thread_group.append(thread)
         thread.start()
     for thread in thread_group:
@@ -180,7 +180,7 @@ def init():
             temp = [line[0], line[1], line[2], line[3]]
             result.append(temp)
 
-def unit():
+def unit(start, end):
     path = "../OurModelOutPut/Users"
     listdirs = os.listdir(path)
     temp = []
@@ -191,17 +191,42 @@ def unit():
             reader = csv.reader(f)
             for line in reader:
                 temp.append(line)
-    with open(path + "/union/user_result_0_20000.csv",'w',newline="") as f2:
+    if(not os.path.exists(path + "/union")):
+        os.makedirs(path + "/union")
+    with open(path + "/union/user_result_" + str(start) + "_" + str(end) + ".csv",'w',newline="") as f2:
         writer = csv.writer(f2)
         for line in temp:
             writer.writerow(line)
 
+def isfind(line, data):
+    for temp in data:
+        if(line[0] == temp[0] and line[1] == temp[1]):
+            return True
+    return False
+
+def check_code_style():
+    '''
+    用来检查是否有遗漏的部分
+    :return:
+    '''
+    init()
+    data = []
+    not_find = []
+    with open("../OurModelOutPut/Users/user_result_0_36421.csv", 'r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for line in reader:
+            data.append(line)
+    for line in tqdm(result):
+        if(not isfind(line, data)):
+            not_find.append(line)
+    with open('../OurModelOutPut/Users/user_result_left.csv', 'w', newline="") as f2:
+        writer = csv.writer(f2)
+        for line in not_find:
+             writer.writerow(line)
+
 if __name__ == '__main__':
-    # TODO 多线程计算，首先电脑pip install pylint
     # 一个Thread一次统计1000个
-    # 朱睿 start_thread_group([x for x in range(10, 20)]) 建议分为10,14|14,17|17,20跑完
-    # 成浩鹏 start_thread_group([x for x in range(20, 30)]) 建议分为20,24|24,27|27,30跑完
-    # 张洪胤负责剩下的部分
-    # start_thread_group([x for x in range(17, 20)])
-    unit()
+    # start_thread_group([x for x in range(0, 1)])
+    # unit(0, 36421)
+    check_code_style()
 
