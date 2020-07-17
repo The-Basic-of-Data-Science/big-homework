@@ -112,6 +112,8 @@ class UserCodeStyle:
         :param end: 不含
         :return:
         '''
+        if(end > len(result)):
+            end = len(result)
         temp_results = result[start : end]
         after_results = []
         for temp_result in tqdm(temp_results):
@@ -161,7 +163,7 @@ def start_thread_group(chunk_numbers):
     thread_group = []
     for chunk_number in chunk_numbers:
         thread = user_code_thread(chunk_number, "Thread-" + str(chunk_number)
-                                  , 1000 * chunk_number, 1000*(chunk_number + 1))
+                                  , 200 * chunk_number, 200*(chunk_number + 1))
         thread_group.append(thread)
         thread.start()
     for thread in thread_group:
@@ -183,13 +185,13 @@ def unit():
     listdirs = os.listdir(path)
     temp = []
     for listdir in listdirs:
-        if(listdir == "code_style.csv"):
+        if(listdir == "code_style.csv" or (not listdir.endswith(".csv"))):
             continue
         with open(path + "/" + listdir, 'r') as f:
             reader = csv.reader(f)
             for line in reader:
                 temp.append(line)
-    with open(path + "/union/user_result_0_3000.csv",'w',newline="") as f2:
+    with open(path + "/union/user_result_0_20000.csv",'w',newline="") as f2:
         writer = csv.writer(f2)
         for line in temp:
             writer.writerow(line)
@@ -200,5 +202,6 @@ if __name__ == '__main__':
     # 朱睿 start_thread_group([x for x in range(10, 20)]) 建议分为10,14|14,17|17,20跑完
     # 成浩鹏 start_thread_group([x for x in range(20, 30)]) 建议分为20,24|24,27|27,30跑完
     # 张洪胤负责剩下的部分
-    start_thread_group([x for x in range(28, 31)])
-    # unit()
+    # start_thread_group([x for x in range(17, 20)])
+    unit()
+
