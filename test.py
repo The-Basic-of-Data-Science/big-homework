@@ -25,4 +25,8 @@ def load_code_style_score(path):
     print(score)
 
 if __name__ == '__main__':
-    load_code_style_score('OurModelOutPut\python_source\\test_data_1\Python\\3544\\2908\\252578_result1582558143535.py')
+    # load_code_style_score('OurModelOutPut\python_source\\test_data_1\Python\\3544\\2908\\252578_result1582558143535.py')
+    from operator import itemgetter
+    student_tuples = [[1,2,3],[1,1,3],[0,1,3]]
+    student_tuples.sort(key=itemgetter(0, 1))
+    print(student_tuples)

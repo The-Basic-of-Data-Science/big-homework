@@ -7,6 +7,7 @@ import json
 import statistics
 from tqdm import tqdm
 import urllib.request
+from operator import itemgetter, attrgetter
 
 class StatisticsClass:
     def __init__(self, name, source, output):
@@ -179,44 +180,54 @@ class StatisticsClass:
         # 预加载数据并处理
         result = [['user_id', 'case_id', 'upload_times', 'every_scores'
                           , 'scores_change', 'final_score', 'test_cases_number']]
+        temps_input = []
         with open(self.source,'r') as f:
             reader = csv.reader(f)
             temp = []
-            for line in tqdm(reader):
-                # 忽略第一行
+            for line in reader:
                 if(line[0] == 'user_id'):
                     continue
-                if(len(temp) == 0):
+                line[0] = eval(line[0])
+                line[1] = eval(line[1])
+                temps_input.append(line)
+        # 调整为有序
+        temps_input.sort(key=itemgetter(0, 1))
+        # self.list_to_csv("after_csv", temps_input)
+        for line in tqdm(temps_input):
+            # 忽略第一行
+            if(line[0] == 'user_id'):
+                continue
+            if(len(temp) == 0):
+                temp.append(line)
+            else:
+                if(temp[0][0] == line[0] and temp[0][1] == line[1]):
                     temp.append(line)
                 else:
-                    if(temp[0][0] == line[0] and temp[0][1] == line[1]):
-                        temp.append(line)
+                    scores = []
+                    for t in temp:
+                        scores.append(t[6])
+                    result_temp = self.usercase_action_statistics(temp[0][0], temp[0][1]
+                                                        , scores, temp[0][3], self.get_tests_number(temp[0][5]))
+                    if(len(result_temp) == 7):
+                        result.append(result_temp)
                     else:
-                        scores = []
-                        for t in temp:
-                            scores.append(t[6])
-                        result_temp = self.usercase_action_statistics(temp[0][0], temp[0][1]
-                                                            , scores, temp[0][3], self.get_tests_number(temp[0][5]))
-                        if(len(result_temp) == 7):
-                            result.append(result_temp)
-                        else:
-                            print('7 Error!')
-                        temp = [line]
-            if(len(temp) != 0):
-                scores = []
-                for t in temp:
-                    scores.append(t[6])
-                result_temp = self.usercase_action_statistics(temp[0][0], temp[0][1],
-                                                         scores, temp[0][3], self.get_tests_number(temp[0][5]))
-                if (len(result_temp) == 7):
-                    result.append(result_temp)
-                else:
-                    print('7 Error!')
+                        print('7 Error!')
+                    temp = [line]
+        if(len(temp) != 0):
+            scores = []
+            for t in temp:
+                scores.append(t[6])
+            result_temp = self.usercase_action_statistics(temp[0][0], temp[0][1],
+                                                     scores, temp[0][3], self.get_tests_number(temp[0][5]))
+            if (len(result_temp) == 7):
+                result.append(result_temp)
+            else:
+                print('7 Error!')
         self.list_to_csv('action_statistics',result)
 
     def list_to_csv(self, filename, arrays):
         '''
-        将数组加载到CSV
+        将数组的数据存储到csv文件
         :param filename: 文件名（不含后缀)
         :param arrays: array
         :return:
@@ -234,7 +245,7 @@ class StatisticsClass:
 
     def user_to_case_statistics(self):
         '''
-        统计有效情况，不计入多线程计算部分
+        统计用户有效提交情况，不计入多线程计算部分
         :return:
         '''
         # userid -> caseid -> [allUploads, validUploads]

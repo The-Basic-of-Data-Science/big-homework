@@ -5,7 +5,7 @@ from tqdm import tqdm
 from OurModel import _2_Statisic
 
 '''
-统计题目难度，将各文件夹的brief汇总生成detail,在FindValid之后进行
+统计题目难度，将各块的brief汇总生成detail,在FindValid之后进行，之后根据汇总的detail进行处理
 '''
 class CaseDigestClass:
     def __init__(self, name, json_path, source, output):
@@ -51,7 +51,10 @@ class CaseDigestClass:
 
     def cases_statistics(self):
         my_statistics = _2_Statisic.StatisticsClass("题目分数统计", self.output + "/cases_detail.csv",self.output)
-        my_statistics.cases_score_statistics()
+        # 统计题目难度
+        # my_statistics.cases_score_statistics()
+        # 统计用户行为
+        my_statistics.action_statistics()
 
     def list_to_csv(self, filename, data):
         '''
