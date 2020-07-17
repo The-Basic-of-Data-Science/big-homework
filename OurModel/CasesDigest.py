@@ -50,7 +50,7 @@ class CaseDigestClass:
         self.cases.clear()
 
     def cases_statistics(self):
-        my_statistics = _2_Statisic.StatisticsClass("题目分数统计", self.output + "/cases_detail.csv",self.output)
+        my_statistics = _2_Statisic.StatisticsClass("题目分数统计", self.output + "cases_detail.csv",self.output)
         # 统计题目难度
         # my_statistics.cases_score_statistics()
         # 统计用户行为

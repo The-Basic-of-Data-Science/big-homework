@@ -181,7 +181,7 @@ class StatisticsClass:
         result = [['user_id', 'case_id', 'upload_times', 'every_scores'
                           , 'scores_change', 'final_score', 'test_cases_number']]
         temps_input = []
-        with open(self.source,'r') as f:
+        with open(self.source, 'r',encoding='gbk') as f:
             reader = csv.reader(f)
             temp = []
             for line in reader:
