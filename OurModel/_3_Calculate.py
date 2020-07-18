@@ -8,6 +8,9 @@
 import json
 import csv
 import numpy as np
+from matplotlib import pyplot as plt
+
+
 
 MIN_DIFFICULTY = 0.1 #最小难度
 MAX_DIFFICULTY = 0.8 #最大难度，也就是分数部分占比
@@ -65,12 +68,35 @@ class Calculator:
         for row in cr:
             self.final_score[",".join(row[0:2])] = float(row[3])
 
-    
-    def get_code_style_score(self):
-        #TODO 取绝大部分人的风格分为区间，映射到 [0, 100] 
+
+    def get_code_style_score_dist(self):
+        distr = []
+        for i in range(-1710, 15, 5):
+            distr.append(0)
         cr = csv.reader(open("../OurModelOutPut/Users/user_result_0_36421.csv"), delimiter=",")
         for row in cr:
-            self.code_style_score[",".join(row[0:2])] = float(row[3])
+            distr[int((float(row[3]) + 1710) // 5)] += 1
+        print(distr)
+        print(distr.index(212) * 5 - 1710)
+        print(distr.index(6114) * 5 - 1710)
+        plt.bar(range(len(distr)), distr, color='#6a005f')
+        plt.ylim(min(distr), max(distr))
+        plt.title('Coding Style Score Distribution')
+        plt.ylabel('number')
+        plt.xlabel('score ( = x * 5 - 1710 )')
+        plt.show()
+
+    
+    def get_code_style_score(self):
+        #根据绝大多数原始分数的分布得到范围 [-25, 10]
+        MIN_CODE_STYLE_SCORE = -25
+        MAX_CODE_STYLE_SCORE = 10
+        cr = csv.reader(open("../OurModelOutPut/Users/user_result_0_36421.csv"), delimiter=",")
+        for row in cr:
+            score = float(row[3])
+            if score < MIN_CODE_STYLE_SCORE: score = MIN_CODE_STYLE_SCORE
+            if score > MAX_CODE_STYLE_SCORE: score = MAX_CODE_STYLE_SCORE #规整原始分数
+            self.code_style_score[",".join(row[0:2])] = (score + 25) / 35 * 100 #线性映射到 [0, 100]
 
 
     def get_valid_rate(self):
@@ -147,4 +173,5 @@ class Calculator:
 
 if __name__ == '__main__':
     calculator = Calculator()
+    # calculator.get_code_style_score_dist()
     print(calculator.user_score('60699'))
