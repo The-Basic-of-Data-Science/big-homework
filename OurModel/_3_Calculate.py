@@ -108,6 +108,12 @@ class Calculator:
             self.difficulty[case] = index / (len(RAW_DIFFICULTY_CENTERS) - 1) * (MAX_DIFFICULTY - MIN_DIFFICULTY) + MIN_DIFFICULTY #下标换算难度
         # print(self.difficulty)
         # print(cnt)
+        # plt.bar(range(len(cnt)), cnt, color='#6a005f')
+        # plt.ylim(0, max(cnt))
+        # plt.title('Case Difficulty Distribution')
+        # plt.ylabel('number')
+        # plt.xlabel('difficulty ( x -> X )')
+        # plt.show()
 
 
     def get_final_score(self):
