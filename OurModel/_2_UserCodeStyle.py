@@ -7,17 +7,22 @@ import os
 import threading
 import time
 
-# 全局
-result = []
-
 class UserCodeStyle:
-    def __init__(self, name, source, output):
+    def __init__(self, name, output, detail_csv, python_origin):
         self.name = name
-        self.source = source
         self.output = output
+        self.code_style = self.output + "/code_style_" + self.name + ".csv"
+        self.detail_csv = detail_csv
+        self.python_origin = python_origin
         self.userResult = []
+        self.origin = []
 
     def get_score(self, path):
+        '''
+        计算出路径指向的位置的用户的成绩
+        :param path:
+        :return:
+        '''
         (pylint_stdout, pylint_stderr) = lint.py_run(path, return_std=True)
 
         pylint_stdout.seek(0)
@@ -37,6 +42,11 @@ class UserCodeStyle:
         return score
 
     def load_code_style_score(self, path):
+        '''
+        将用户的需要被统计成绩的部分保存起来
+        :param path:
+        :return:
+        '''
         if(path == ""):
             return
         user_id = path.split("/")[-3]
@@ -46,7 +56,7 @@ class UserCodeStyle:
 
     def list_to_csv(self, filename,  data):
         '''
-        将source中的数据格式化到CsvResult/filename.csv中去
+        将source中的数据格式化到${self.output}中的filename去
         :param filename: 文件名
         :param source: 源文件
         :param output: 输出文件夹
@@ -60,20 +70,16 @@ class UserCodeStyle:
                 if(len(br) != 0 and len(br[0]) != 0):
                     writer.writerow(br)
 
-    def load_chunks_code_style(self):
-        if(not os.path.exists(self.source)):
-            print("Not Find Source!")
-            return
+    def load_code_style(self):
+        '''
+        计算所有的用户编码风格分数
+        :return:
+        '''
         # 清理code_style文件
-        with open(self.output + "/code_style.csv",'w') as f:
+        with open(self.code_style,'w') as f:
             print("Clear Output!")
-        chunks = os.listdir(self.source)
-        for chunk in tqdm(chunks):
-            self.load_csv_code_style(chunk)
 
-    def load_csv_code_style(self, chunk):
-        path = self.source + "/" + chunk + "/CsvResult/detail.csv"
-        with open(path, 'r') as f:
+        with open(self.detail_csv, 'r') as f:
             reader = csv.reader(f)
             user_id = -1
             case_id = -1
@@ -87,56 +93,63 @@ class UserCodeStyle:
                     case_id = eval(line[1])
                     user_score = eval(line[3])
                     self.load_code_style_score(user_path)
-                    pys = os.listdir(self.source + "/" + chunk + "/Python/" + line[0] + \
-                                     "/" + line[1])
+                    pys = os.listdir(self.python_origin + line[0] + "/" + line[1])
                     for py in pys:
                         if (py.startswith(line[4] + "_result")):
-                            user_path = self.source + "/" + chunk + "/Python/" + line[0] + \
-                                        "/" + line[1] + "/" + py
+                            user_path = self.python_origin + line[0] + "/" + line[1] + "/" + py
                 else:
                     if(eval(line[3]) >= user_score):
                         user_score = eval(line[3])
-                        pys = os.listdir(self.source + "/" + chunk + "/Python/" + line[0] + \
-                                    "/" + line[1])
+                        pys = os.listdir(self.python_origin + line[0] + "/" + line[1])
                         for py in pys:
                             if(py.startswith(line[4] + "_result")):
-                                user_path = self.source + "/" + chunk + "/Python/" + line[0] + \
-                                    "/" + line[1] + "/" + py
+                                user_path = self.python_origin + line[0] + "/" + line[1] + "/" + py
         self.load_code_style_score(user_path)
-        self.list_to_csv("code_style", self.userResult)
+        self.list_to_csv("code_style_" + self.name, self.userResult)
 
-    def all_scores(self, start, end):
+    # 之后计算答案和结果的部分
+
+    def all_scores(self):
         '''
         获取所有的结果
         :param start: 包含
         :param end: 不含
         :return:
         '''
-        if(end > len(result)):
-            end = len(result)
-        temp_results = result[start : end]
+        self.init()
         after_results = []
-        for temp_result in tqdm(temp_results):
-            score = self.get_score(temp_result[-1])
-            after_result = [temp_result[0], temp_result[1], temp_result[2], score]
+        for temp in tqdm(self.origin):
+            score = self.get_score(temp[-1])
+            after_result = [temp[0], temp[1], temp[2], score]
             after_results.append(after_result)
-        self.list_to_csv("user_result_" + str(start) + "_" + str(end), after_results)
+        self.list_to_csv("user_result_" + self.name, after_results)
+
+    def init(self):
+        cnt = 0
+        with open(self.code_style, 'r') as f:
+            reader = csv.reader(f)
+            for line in tqdm(reader):
+                cnt += 1
+                temp = [line[0], line[1], line[2], line[3]]
+                self.origin.append(temp)
 
 class user_code_thread(threading.Thread):
-    def __init__(self, thread_id, name, begin, end):
+    def __init__(self, thread_id, name, chunk):
         threading.Thread.__init__(self)
         self.thread_id = thread_id
         self.name = name
-        self.begin = begin
-        self.end = end
+        self.chunk = chunk
 
     def run(self):
         start = time.time()
         print("开始线程{}:{}".format(self.name, self.time_format(start)))
         # 线程检查
-        userCodeStyle = UserCodeStyle("用户编码风格分数生成", "../OurModelOutPut/python_source"
-                                      , "../OurModelOutPut/Users")
-        userCodeStyle.all_scores(self.begin, self.end)
+        source = "../OurModelOutPut/python_source"
+        userCodeStyle = UserCodeStyle(str(self.chunk), "../OurModelOutPut/Users" ,
+                                      source + "/test_data_" + str(self.chunk) + "/CsvResult/detail.csv",
+                                      source + "/test_data_" + str(self.chunk) + "/Python/")
+        userCodeStyle.load_code_style()
+        userCodeStyle.all_scores()
         finish = time.time()
         print("退出线程{}:{}".format(self.name, self.time_format(finish)))
         duration = finish - start
@@ -159,11 +172,9 @@ def start_thread_group(chunk_numbers):
     :param chunk_end:
     :return:
     '''
-    init()
     thread_group = []
     for chunk_number in chunk_numbers:
-        thread = user_code_thread(chunk_number, "Thread-" + str(chunk_number)
-                                  , 100 * chunk_number, 100*(chunk_number + 1))
+        thread = user_code_thread(chunk_number, "Thread-" + str(chunk_number), chunk_number)
         thread_group.append(thread)
         thread.start()
     for thread in thread_group:
@@ -171,16 +182,13 @@ def start_thread_group(chunk_numbers):
     # 如果没有出现这句话请再次运行main.py
     print("退出主线程")
 
-def init():
-    cnt = 0
-    with open("../OurModelOutPut/Users/code_style.csv", 'r') as f:
-        reader = csv.reader(f)
-        for line in tqdm(reader):
-            cnt += 1
-            temp = [line[0], line[1], line[2], line[3]]
-            result.append(temp)
-
-def unit(start, end):
+def __unit(start, end):
+    '''
+    合并结果仅仅在类内部使用
+    :param start:
+    :param end:
+    :return:
+    '''
     path = "../OurModelOutPut/Users"
     listdirs = os.listdir(path)
     temp = []
@@ -198,35 +206,7 @@ def unit(start, end):
         for line in temp:
             writer.writerow(line)
 
-def isfind(line, data):
-    for temp in data:
-        if(line[0] == temp[0] and line[1] == temp[1]):
-            return True
-    return False
-
-def check_code_style():
-    '''
-    用来检查是否有遗漏的部分
-    :return:
-    '''
-    init()
-    data = []
-    not_find = []
-    with open("../OurModelOutPut/Users/user_result_0_36421.csv", 'r', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        for line in reader:
-            data.append(line)
-    for line in tqdm(result):
-        if(not isfind(line, data)):
-            not_find.append(line)
-    with open('../OurModelOutPut/Users/user_result_left.csv', 'w', newline="") as f2:
-        writer = csv.writer(f2)
-        for line in not_find:
-             writer.writerow(line)
-
 if __name__ == '__main__':
-    # 一个Thread一次统计1000个
-    # start_thread_group([x for x in range(0, 1)])
-    # unit(0, 36421)
-    check_code_style()
+    start_thread_group([x for x in range(1, 2)])
+    print("Finish!")
 

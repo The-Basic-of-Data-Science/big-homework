@@ -60,6 +60,7 @@ class Calculator:
 
 
     def pre_get_code_style_score_dist(self): #预先求出原始编码风格分的分布
+        # TODO -25-10
         distr = []
         for i in range(-1710, 15, 5):
             distr.append(0)

@@ -1,0 +1,4 @@
+case_id,mean_data,median_data,mode_data,try_number,pass_number,average_upload_times,test_cases_number
+2172,100.0,100.0,100.0,1,1,4.0,5
+2456,100.0,100.0,100.0,1,1,5.0,5
+2908,0.0,0.0,0.0,1,0,5.0,5
