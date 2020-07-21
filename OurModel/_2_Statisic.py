@@ -9,6 +9,7 @@ from tqdm import tqdm
 import urllib.request
 from operator import itemgetter, attrgetter
 
+
 class StatisticsClass:
     def __init__(self, name, source, output):
         self.name = name
@@ -181,6 +182,7 @@ class StatisticsClass:
         result = [['user_id', 'case_id', 'upload_times', 'every_scores'
                           , 'scores_change', 'final_score']]
         temps_input = []
+
         with open(self.source, 'r',encoding='gbk') as f:
             reader = csv.reader(f)
             temp = []
