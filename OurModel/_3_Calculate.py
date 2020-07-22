@@ -32,20 +32,36 @@ MAX_CODE_STYLE_SCORE = 10
 
 class Calculator:
 
+    TEST_DATA = ''
+    USER_RESULT = ''
+    SCORE_STATISTICS = ''
+    CASES_DETAIL = ''
+    VALID = ''
+
+
     raw_data = None #原始数据
     difficulty = {} #题目难度 [MIN_DIFFICULTY, MAX_DIFFICULTY]
     final_score = {} #每人每题的最终得分，键名为 "uid,cid"
     code_style_score = {} #每人每题的编码风格分，键名为 "uid,cid"
     valid_rate = {} #每人每题的有效提交率，键名为 "uid,cid"
+    test_score = {} #每人每题的最终得分的权重，键名为 "uid,cid"
 
 
-    def __init__(self):
-        with open("../JSON/test_data.json", 'r', encoding='utf-8') as f:
+    def __init__(self, TEST_DATA, USER_RESULT, SCORE_STATISTICS, CASES_DETAIL, VALID, TEST_SCORE):
+        self.TEST_DATA = TEST_DATA
+        self.USER_RESULT = USER_RESULT
+        self.SCORE_STATISTICS = SCORE_STATISTICS
+        self.CASES_DETAIL = CASES_DETAIL
+        self.VALID = VALID
+        self.TEST_SCORE = TEST_SCORE
+
+        with open(self.TEST_DATA, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f) #获取原始数据
         self.get_difficulty() #获取题目难度
         self.get_final_score() #获取每人每题最终得分
         self.get_code_style_score() #获取每人每题的编码风格分
         self.get_valid_rate() #获取每人每题的有效提交率
+        self.get_test_score() #获取每人每题的最终得分的权重
 
 
     def pre_get_raw_difficulty_centers(self): #预先求出生难度的分类中心
@@ -64,7 +80,7 @@ class Calculator:
         distr = []
         for i in range(-1710, 15, 5):
             distr.append(0)
-        cr = csv.reader(open("../OurModelOutPut/Users/user_result_0_36421.csv"), delimiter=",")
+        cr = csv.reader(open(self.USER_RESULT), delimiter=",")
         for row in cr:
             distr[int((float(row[3]) + 1710) // 5)] += 1
         print(distr)
@@ -80,7 +96,7 @@ class Calculator:
 
     def __get_raw_scores(self): #读取分数数据到字典
         scores = {} #分数数据
-        cr = csv.reader(open("../OurModelOutPut/Cases/score_statistics.csv"), delimiter=",")
+        cr = csv.reader(open(self.SCORE_STATISTICS), delimiter=",")
         next(cr)
         for row in cr:
             #row: 题目编号,平均数,中位数,众数,尝试人数,通过人数,平均提交次数,测试用例数
@@ -118,14 +134,14 @@ class Calculator:
 
 
     def get_final_score(self):
-        cr = csv.reader(open("../OurModelOutPut/Cases/cases_detail.csv", encoding = 'gb2312'), delimiter=",")
+        cr = csv.reader(open(self.CASES_DETAIL, encoding = 'gb2312'), delimiter=",")
         next(cr)
         for row in cr:
             self.final_score[",".join(row[0:2])] = float(row[3])
 
     
     def get_code_style_score(self):
-        cr = csv.reader(open("../OurModelOutPut/Users/user_result_0_36421.csv"), delimiter=",")
+        cr = csv.reader(open(self.USER_RESULT), delimiter=",")
         for row in cr:
             score = float(row[3])
             if score < MIN_CODE_STYLE_SCORE: score = MIN_CODE_STYLE_SCORE
@@ -134,10 +150,16 @@ class Calculator:
 
 
     def get_valid_rate(self):
-        cr = csv.reader(open("../OurModelOutPut/Valid/valid.csv"), delimiter=",")
+        cr = csv.reader(open(self.VALID), delimiter=",")
         next(cr)
         for row in cr:
             self.valid_rate[",".join(row[0:2])] = float(row[4])
+
+    def get_test_score(self):
+        cr = csv.reader(open(self.TEST_SCORE), delimiter=",")
+        next(cr)
+        for row in cr:
+            self.test_score[",".join(row[0:2])] = float(row[2])
 
 
     def code_score(self, uid, cid):
@@ -148,13 +170,11 @@ class Calculator:
         :return:做题分
         '''
         key = ",".join([uid, cid])
-        # TODO 得到weight
-        weight = 1
-        if key in self.final_score:
-            print("最终得分=" + str(self.final_score[key]) + " 权重=" + str(weight))
-            return self.final_score[key] * weight
+        if key in self.final_score and key in self.test_score:
+            print("最终得分=" + str(self.final_score[key]) + " 权重=" + str(self.test_score[key]))
+            return self.final_score[key] * self.test_score[key]
         else:
-            print(key + "的最终成绩缺失")
+            print(key + "的最终成绩或权重缺失")
             return 0
 
 
@@ -206,6 +226,13 @@ class Calculator:
         return score, score / len(self.raw_data[uid]["cases"])
 
 if __name__ == '__main__':
-    calculator = Calculator()
+    calculator = Calculator(
+        "../JSON/test_data.json",
+        "../OurModelOutPut/Users/user_result_0_36421.csv",
+        "../OurModelOutPut/Cases/score_statistics.csv",
+        "../OurModelOutPut/Cases/cases_detail.csv",
+        "../OurModelOutPut/Valid/valid.csv",
+        "../OurModelOutPut/Cases/test_score.csv"
+        )
     # calculator.pre_get_raw_difficulty_centers()
     print(calculator.user_score('60699'))
