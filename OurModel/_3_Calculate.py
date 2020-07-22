@@ -37,6 +37,7 @@ class Calculator:
     SCORE_STATISTICS = ''
     CASES_DETAIL = ''
     VALID = ''
+    RESULT = ''
 
 
     raw_data = None #原始数据
@@ -47,13 +48,14 @@ class Calculator:
     test_score = {} #每人每题的最终得分的权重，键名为 "uid,cid"
 
 
-    def __init__(self, TEST_DATA, USER_RESULT, SCORE_STATISTICS, CASES_DETAIL, VALID, TEST_SCORE):
+    def __init__(self, TEST_DATA, USER_RESULT, SCORE_STATISTICS, CASES_DETAIL, VALID, TEST_SCORE, RESULT):
         self.TEST_DATA = TEST_DATA
         self.USER_RESULT = USER_RESULT
         self.SCORE_STATISTICS = SCORE_STATISTICS
         self.CASES_DETAIL = CASES_DETAIL
         self.VALID = VALID
         self.TEST_SCORE = TEST_SCORE
+        self.RESULT = RESULT
 
         with open(self.TEST_DATA, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f) #获取原始数据
@@ -76,7 +78,6 @@ class Calculator:
 
 
     def pre_get_code_style_score_dist(self): #预先求出原始编码风格分的分布
-        # TODO -25-10
         distr = []
         for i in range(-1710, 15, 5):
             distr.append(0)
@@ -155,6 +156,7 @@ class Calculator:
         for row in cr:
             self.valid_rate[",".join(row[0:2])] = float(row[4])
 
+
     def get_test_score(self):
         cr = csv.reader(open(self.TEST_SCORE), delimiter=",")
         next(cr)
@@ -171,8 +173,10 @@ class Calculator:
         '''
         key = ",".join([uid, cid])
         if key in self.final_score and key in self.test_score:
-            print("最终得分=" + str(self.final_score[key]) + " 权重=" + str(self.test_score[key]))
-            return self.final_score[key] * self.test_score[key]
+            fs = self.final_score[key]
+            wt = self.test_score[key]
+            print("最终得分=" + str(fs) + " 权重=" + str(wt))
+            return fs * wt
         else:
             print(key + "的最终成绩或权重缺失")
             return 0
@@ -217,13 +221,28 @@ class Calculator:
             print("没有这个人")
             return
         score = 0
+        scores = {}
         for case in self.raw_data[uid]["cases"]: #遍历此人交过的每道题目
-            print(",".join([uid, case["case_id"]]))
-            t = self.case_score(uid, case["case_id"])
+            cid = case["case_id"]
+            print(",".join([uid, cid]))
+            t = self.case_score(uid, cid)
             print("题目分为" + str(t))
             score += t #加上这题的做题分
+            scores[cid] = t
             print()
-        return score, score / len(self.raw_data[uid]["cases"])
+        average = score / len(self.raw_data[uid]["cases"])
+        return score, average, scores
+    
+
+    def all_user_score(self):
+        with open(self.RESULT, 'w', encoding="utf-8") as f:
+            writer = csv.writer(f, delimiter = ",")
+            writer.writerow(["用户编号", "作业完成情况", "总评分", "每题综合分的字典"])
+            for user in self.raw_data:
+                row = [user]
+                row.extend(self.user_score(user))
+                writer.writerow(row)
+
 
 if __name__ == '__main__':
     calculator = Calculator(
@@ -232,7 +251,9 @@ if __name__ == '__main__':
         "../OurModelOutPut/Cases/score_statistics.csv",
         "../OurModelOutPut/Cases/cases_detail.csv",
         "../OurModelOutPut/Valid/valid.csv",
-        "../OurModelOutPut/Cases/test_score.csv"
+        "../OurModelOutPut/Cases/test_score.csv",
+        "../OurModelOutPut/Result/all.csv"
         )
     # calculator.pre_get_raw_difficulty_centers()
-    print(calculator.user_score('60699'))
+    # print(calculator.user_score('60699'))
+    calculator.all_user_score()
