@@ -52,6 +52,8 @@ class Calculator:
     valid_rate = {}
     # 每人每题的最终得分的权重，键名为 "uid,cid"
     test_score = {}
+    # 题目的类型，键名为 "cid"
+    case_type = {}
 
 
     def __init__(self, TEST_DATA, USER_RESULT, SCORE_STATISTICS, CASES_DETAIL, VALID, TEST_SCORE, RESULT):
@@ -86,6 +88,8 @@ class Calculator:
         self.get_valid_rate()
         # 获取每人每题的最终得分的权重
         self.get_test_score()
+        # 获取题目类型
+        self.get_case_type()
 
     def pre_get_raw_difficulty_centers(self):
         '''
@@ -239,6 +243,17 @@ class Calculator:
             self.test_score[",".join(row[0:2])] = float(row[2])
 
 
+    def get_case_type(self):
+        '''
+        获取题目类型
+        :return:
+        '''
+        cr = csv.reader(open(self.CASES_DETAIL, encoding = 'gb2312'), delimiter=",")
+        next(cr)
+        for row in cr:
+            self.case_type[row[1]] = row[2]
+
+
     def code_score(self, uid, cid):
         '''
         获取用户的做题分数
@@ -318,10 +333,16 @@ class Calculator:
         '''
         with open(self.RESULT, 'w', encoding="utf-8") as f:
             writer = csv.writer(f, delimiter = ",")
-            writer.writerow(["用户编号", "作业完成情况", "总评分", "每题综合分的字典"])
+            writer.writerow(["用户编号", "作业完成情况", "总评分", "每题综合分的字典", "每一类题的综合分的数组"])
             for user in self.raw_data:
                 row = [user]
                 row.extend(self.user_score(user))
+                # 每一类题的综合分的数组
+                type_score = {}
+                scores = row[3]
+                for case in scores:
+                    type_score[self.case_type[case]] = type_score.get(self.case_type[case], []) + [scores[case]]
+                row.append(type_score)
                 writer.writerow(row)
 
 
