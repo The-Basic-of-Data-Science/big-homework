@@ -66,11 +66,11 @@ class Case_thread(threading.Thread):
         if(not os.path.exists(self.source)):
             print("没有找到这个用户")
             return
-        # self.__retrieve_python()
-        # self.__valid_uploads()
-        # self.__statistics()
-        # self.__user_code_style_score()
-        # self.__user_valid()
+        self.__retrieve_python()
+        self.__valid_uploads()
+        self.__statistics()
+        self.__user_code_style_score()
+        self.__user_valid()
         self.__user_score()
         self.__toGraph()
 

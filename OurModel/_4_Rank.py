@@ -44,14 +44,23 @@ class Rank:
         # category:{user_id:score}
         categories = {"排序算法": {}, "查找算法": {}, "图结构": {}, "树结构": {}, "数字操作": {},
                       "字符串": {}, "线性表": {}, "数组": {}}
-        reader = csv.reader(open(self.score_source))
-        reader.next()
+        reader = csv.reader(open(self.score_source, encoding="utf-8"))
+        next(reader)
         for line in reader:
             all_score[line[0]] = eval(line[1])
             average_score[line[0]] = eval(line[2])
             user_categories = eval(line[4])
             for category in user_categories.keys():
-                categories[category][line[0]] = np.mean(list(map(eval,user_categories[category])))
+                categories[category][line[0]] = np.mean(user_categories[category])
+
+        self.__rank_output(all_score, "all_score_rank.csv", ["user_id", "all_score", "rank(percent)"])
+        self.__rank_output(average_score, "average_score_rank.csv", ["user_id", "average_score", "rank(percent)"])
+        category_output = self.output +"/category"
+        if(not os.path.exists(category_output)):
+                os.mkdir(category_output)
+        for category in categories:
+            self.__rank_output(categories[category], "/category/" + category + "_rank.csv",
+                               ["user_id", "average_score", "rank(percent)"])
 
     def __rank_output(self, my_dict, filename, title):
         '''
@@ -62,8 +71,7 @@ class Rank:
         :return:
         '''
         my_dict_keys = list(my_dict.keys())
-        # TODO
-        my_dict_keys.sort(key = lambda x: eval(my_dict[x]), reverse=True)
+        my_dict_keys.sort(key=lambda x: my_dict[x], reverse=True)
         with open(self.output + "/" + filename, 'w', newline="") as f:
             writer = csv.writer(f)
             writer.writerow(title)
@@ -79,4 +87,4 @@ if __name__ == '__main__':
     rank = Rank("../OurModelOutPut/Users/user_result_0_36421.csv",
                 "../OurModelOutPut/Result/all.csv",
                 "../OurModelOutPut/Rank")
-    rank.rank_code_style()
+    rank.rank_score()
