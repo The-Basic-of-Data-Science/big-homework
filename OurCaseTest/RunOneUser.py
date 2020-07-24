@@ -228,7 +228,8 @@ class Case_thread(threading.Thread):
             os.rmdir(dirpath)
 
 if __name__ == '__main__':
-    user_id = "3544"
+    # 推荐使用这两位用户 60778 60725
+    user_id = "60725"
     case_thread = Case_thread("User-" + user_id, user_id)
     case_thread.start()
     case_thread.join()
