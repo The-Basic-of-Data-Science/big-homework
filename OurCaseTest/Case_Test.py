@@ -228,9 +228,7 @@ class Case_thread(threading.Thread):
             os.rmdir(dirpath)
 
 if __name__ == '__main__':
-    '''
-    CaseTest.json中最好只放置2位用户(效果好)
-    '''
-    case_thread = Case_thread("Case-Test", "3544")
+    user_id = "3544"
+    case_thread = Case_thread("User-" + user_id, user_id)
     case_thread.start()
     case_thread.join()
