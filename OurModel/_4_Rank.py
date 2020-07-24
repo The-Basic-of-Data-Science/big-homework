@@ -41,7 +41,7 @@ class Rank:
         '''
         all_score = {}
         average_score = {}
-        # category:{user_id:score}
+        # Category:{user_id:score}
         categories = {"排序算法": {}, "查找算法": {}, "图结构": {}, "树结构": {}, "数字操作": {},
                       "字符串": {}, "线性表": {}, "数组": {}}
         reader = csv.reader(open(self.score_source, encoding="utf-8"))
@@ -55,11 +55,11 @@ class Rank:
 
         self.__rank_output(all_score, "all_score_rank.csv", ["user_id", "all_score", "rank(percent)"])
         self.__rank_output(average_score, "average_score_rank.csv", ["user_id", "average_score", "rank(percent)"])
-        category_output = self.output +"/category"
+        category_output = self.output +"/Category"
         if(not os.path.exists(category_output)):
                 os.mkdir(category_output)
         for category in categories:
-            self.__rank_output(categories[category], "/category/" + category + "_rank.csv",
+            self.__rank_output(categories[category], "/Category/" + category + "_rank.csv",
                                ["user_id", "average_score", "rank(percent)"])
 
     def __rank_output(self, my_dict, filename, title):

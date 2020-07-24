@@ -65,13 +65,14 @@ class Case_thread(threading.Thread):
         if(not os.path.exists(self.source)):
             print("没有找到这个用户")
             return
-        self.__retrieve_python()
-        self.__valid_uploads()
-        self.__statistics()
-        self.__user_code_style_score()
-        self.__user_valid()
+        # self.__retrieve_python()
+        # self.__valid_uploads()
+        # self.__statistics()
+        # self.__user_code_style_score()
+        # self.__user_valid()
         self.__user_score()
-        self.__toGraph()
+        self.__rank_category()
+        self.__rank_all()
 
     def __time_format(self, t):
         '''
@@ -161,14 +162,7 @@ class Case_thread(threading.Thread):
         print("Thread Name:{} end user score digest.".format(self.name))
         self.result = calculator.all_user_score()
 
-    def __rank(self):
-        '''
-        编码风格、总分排位、均分排位
-        :return:
-        '''
-
-
-    def __toGraph(self):
+    def __rank_category(self):
         if(not os.path.exists(self.graph_output)):
             os.mkdir(self.graph_output)
         for line in self.result:
@@ -180,7 +174,8 @@ class Case_thread(threading.Thread):
             data = np.zeros([8,1])
             for i in range(len(labels)):
                 if(labels[i] in line[4].keys()):
-                    data[i] = np.mean(line[4][labels[i]])
+                    data[i] = self.__rank_search(np.mean(line[4][labels[i]]),
+                                                 "../OurModelOutPut/Rank/Category/" + labels[i] + "_rank.csv")
             print(data)
             # 设置字体
             matplotlib.rcParams['font.family'] = 'SimHei'
@@ -195,13 +190,45 @@ class Case_thread(threading.Thread):
             angles = np.concatenate((angles, [angles[0]]))
             # 开始制图
             plt.subplot(111, polar=True)
-            plt.plot(angles, data, 'bo-', color='g', linewidth=2)
-            plt.fill(angles, data, facecolor='g', alpha=0.25)
+            plt.plot(angles, data, 'bo-', color='#6a005f', linewidth=2)
+            plt.fill(angles, data, facecolor='#6a005f', alpha=0.25)
             plt.thetagrids(angles * 180 / np.pi, labels)
-            plt.title(str(user_id) + '号用户能力图', pad=15)
+            plt.title(str(user_id) + '号用户各类题目排位图', pad=15)
             plt.grid(True)
-            plt.savefig(self.graph_output + str(user_id) + "_score.jpg")
+            plt.savefig(self.graph_output + str(user_id) + "_category_score.jpg")
             plt.show()
+
+    def __rank_all(self):
+        '''
+        编码风格、总分排位、均分排位
+        :return:
+        '''
+        user_code_style_score = []
+        reader = csv.reader(open(self.user_code_output + "/user_result_" + self.name + ".csv"
+                                 , 'r', encoding="utf-8"))
+        for line in reader:
+            user_code_style_score.append(float(line[3]))
+        user_code_style_rank = self.__rank_search(np.mean(user_code_style_score),
+                                                  "../OurModelOutPut/Rank/user_code_rank.csv")
+        user_code_style_score.clear()
+
+        result_line = self.result[0]
+        all_score_rank = self.__rank_search(float(result_line[1]), "../OurModelOutPut/Rank/all_score_rank.csv")
+        average_score_rank = self.__rank_search(float(result_line[2]), "../OurModelOutPut/Rank/average_score_rank.csv")
+
+        temp = {"编码风格排位": user_code_style_rank, "总分数排位": all_score_rank , "平均分排位": average_score_rank}
+
+        plt.bar(list(temp.keys()), list(temp.values()), color='#6a005f')
+        plt.ylim(min(temp.values()) - 10, max(temp.values()) + 10)
+        plt.title(self.name + " 号用户整体能力排位图")
+        plt.ylabel('排位(单位:%)')
+        plt.xlabel('不同指标')
+        plt.savefig(self.graph_output + str(user_id) + "_total_score.jpg")
+        plt.show()
+
+        print(self.name + " 用户编码风格排位：" + str(user_code_style_rank) + "%")
+        print(self.name + " 用户总分排位：" + str(all_score_rank) + "%")
+        print(self.name + " 用户均分排位：" + str(average_score_rank) + "%")
 
     def __rank_search(self,my_score, target_file):
         '''
@@ -217,7 +244,7 @@ class Case_thread(threading.Thread):
             result = line[2]
             if(my_score >= eval(line[1])):
                 break
-        return result
+        return float(result.split(" ")[0])
 
     def __clear_py_cache(self):
         '''
@@ -251,7 +278,7 @@ class Case_thread(threading.Thread):
 
 # 推荐使用这两位用户 60778 60725
 if __name__ == '__main__':
-    user_id = "60825"
+    user_id = "60581"
     case_thread = Case_thread("User-" + user_id, user_id)
     case_thread.start()
     case_thread.join()
