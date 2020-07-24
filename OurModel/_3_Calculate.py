@@ -8,7 +8,7 @@ import json
 import csv
 import numpy as np
 from matplotlib import pyplot as plt
-
+import os
 
 # 最低难度
 MIN_DIFFICULTY = 0.1
@@ -281,7 +281,11 @@ class Calculator:
         for case in self.raw_data[uid]["cases"]:
             cid = case["case_id"]
             print(",".join([uid, cid]))
-            t = self.case_score(uid, cid)
+            try:
+                t = self.case_score(uid, cid)
+            except Exception as e:
+                print(str(e))
+                t = 0
             print("题目分为" + str(t))
             # 加上这题的做题分
             score += t
@@ -311,6 +315,9 @@ class Calculator:
         获取所有用户的计算后最终得分，并输出
         :return:
         '''
+        path = "/".join(self.RESULT.split("/")[:-1])
+        if(not os.path.exists(path)):
+            os.mkdir(path)
         with open(self.RESULT, 'w', encoding="utf-8", newline="") as f:
             writer = csv.writer(f, delimiter = ",")
             writer.writerow(["用户编号", "作业完成情况", "总评分", "每题综合分的字典", "每一类题的综合分的数组"])
@@ -332,4 +339,4 @@ if __name__ == '__main__':
     # calculator.pre_get_raw_difficulty_centers()
     # print(calculator.user_score('60699'))
     # calculator.all_user_score()
-    print(calculator.one_user_score('60699'))
+    print(calculator.one_user_score('3544'))
