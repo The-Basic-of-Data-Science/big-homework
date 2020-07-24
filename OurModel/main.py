@@ -21,7 +21,8 @@ class chunk_thread(threading.Thread):
     def run(self):
         start = time.time()
         print("开始线程{}:{}".format(self.name, self.time_format(start)))
-        # 线程检查
+        self.chunk_retrieve()
+        self.chunk_valid()
         self.chunk_statistics()
         end = time.time()
         print("退出线程{}:{}".format(self.name, self.time_format(end)))

@@ -66,11 +66,11 @@ class Case_thread(threading.Thread):
         if(not os.path.exists(self.source)):
             print("没有找到这个用户")
             return
-        self.__retrieve_python()
-        self.__valid_uploads()
-        self.__statistics()
-        self.__user_code_style_score()
-        self.__user_valid()
+        # self.__retrieve_python()
+        # self.__valid_uploads()
+        # self.__statistics()
+        # self.__user_code_style_score()
+        # self.__user_valid()
         self.__user_score()
         self.__toGraph()
 
@@ -170,7 +170,7 @@ class Case_thread(threading.Thread):
             user_id = line[0]
 
             # 绘制雷达图
-            labels = np.array(["排序算法", "查找算法", "图结构", "树结构", "数字结构", "字符串", "线性表", "数组"])
+            labels = np.array(["排序算法", "查找算法", "图结构", "树结构", "数字操作", "字符串", "线性表", "数组"])
             data = np.zeros([8,1])
             for i in range(len(labels)):
                 if(labels[i] in line[4].keys()):
@@ -229,7 +229,7 @@ class Case_thread(threading.Thread):
 
 if __name__ == '__main__':
     # 推荐使用这两位用户 60778 60725
-    user_id = "60725"
+    user_id = "60825"
     case_thread = Case_thread("User-" + user_id, user_id)
     case_thread.start()
     case_thread.join()
