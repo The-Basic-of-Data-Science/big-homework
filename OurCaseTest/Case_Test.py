@@ -3,21 +3,29 @@ from OurModel import _0_RetrievePython
 from OurModel import _1_FindValid
 from OurModel import _2_Statisic
 from OurModel import _2_UserCodeStyle
+from OurModel import _2_Valid
 from OurModel import _3_Calculate
+from matplotlib import pyplot as plt
+import matplotlib
+import numpy as np
 import time
 import threading
 import os
+import csv
 
 class Case_thread(threading.Thread):
-    def __init__(self, name, source, python_source, csv_output, statistics_output, result_output):
+    def __init__(self, name, source, python_source, valid_output, statistics_output
+                 , result_output, graph_output, user_code_output):
         threading.Thread.__init__(self)
         self.name = name
         self.source = source
         self.python_source = python_source
-        self.csv_output = csv_output
+        self.valid_output = valid_output
         self.statistics_output = statistics_output
         self.result_output = result_output
-
+        self.result = []
+        self.graph_output = graph_output
+        self.user_code_output = user_code_output
 
     def run(self):
         start = time.time()
@@ -41,7 +49,9 @@ class Case_thread(threading.Thread):
         # self.__valid_uploads()
         # self.__statistics()
         # self.__user_code_style_score()
+        self.__user_valid()
         self.__user_score()
+        self.__toGraph()
 
     def __time_format(self, t):
         '''
@@ -65,42 +75,106 @@ class Case_thread(threading.Thread):
         print("Thread Name:{} finish retrieve python.".format(self.name))
 
     def __valid_uploads(self):
+        '''
+        检查所有的有效提交情况
+        :return:
+        '''
         print("Thread Name:{} begin check valid uploads.".format(self.name))
         find_valid = _1_FindValid.FindValidClass(self.name,
-                                                 self.python_source, self.source, self.csv_output)
+                                                 self.python_source, self.source, self.valid_output)
         find_valid.findValid()
         print("Thread Name:{} finish check valid uploads.".format(self.name))
 
     def __statistics(self):
+        '''
+        统计题目信息和用户行为数据
+        :return:
+        '''
         print("Thread Name:{} begin statistics.".format(self.name))
         my_statistics = _2_Statisic.StatisticsClass(self.name,
-                                                    self.csv_output + "/detail.csv", self.statistics_output)
+                                                    self.valid_output + "/detail.csv", self.statistics_output)
         my_statistics.my_statistics()
         print("Thread Name:{} finish statistics.".format(self.name))
 
     def __user_code_style_score(self):
+        '''
+        计算用户的有效提交的编码风格分数
+        :return:
+        '''
         print("Thread Name:{} begin user code style statistics.".format(self.name))
-        user_code_style = _2_UserCodeStyle.UserCodeStyle(self.name , self.csv_output, self.csv_output + "/detail.csv",
+        user_code_style = _2_UserCodeStyle.UserCodeStyle(self.name , self.user_code_output, self.valid_output + "/detail.csv",
                                                          self.python_source)
+        if(not os.path.exists(self.user_code_output)):
+            os.mkdir(self.user_code_output)
         user_code_style.load_code_style()
         user_code_style.all_scores()
         self.__clear_py_cache()
         print("Thread Name:{} finish user code style statistics.".format(self.name))
 
+    def __user_valid(self):
+        print("Thread Name:{} begin user valid status.".format(self.name))
+        valid_check = _2_Valid.ValidCheck(self.source, self.valid_output + "/detail.csv", self.valid_output)
+        user_valid_result = valid_check.user_valid()
+        user_valid_result.insert(0, ['user_id', 'case_id', 'all_uploads_number', 'valid_uploads_number', 'valid_rate'])
+        with open(self.valid_output + "/valid.csv", 'w', newline="") as f:
+            writer = csv.writer(f)
+            for line in user_valid_result:
+                writer.writerow(line)
+        print("Thread Name:{} finish user valid status.".format(self.name))
+
     def __user_score(self):
+        '''
+        获取用户的最终的得分
+        :return:
+        '''
         print("Thread Name:{} begin user score digest.".format(self.name))
         calculator = _3_Calculate.Calculator(
             self.source,
-            "../OurModelOutPut/Users/user_result_0_36421.csv",
+            self.user_code_output + "/user_result_" + self.name + ".csv",
             self.statistics_output + "score_statistics.csv",
             "../OurModelOutPut/Cases/cases_detail.csv",
-            "../OurModelOutPut/Valid/valid.csv",
+            self.valid_output + "/valid.csv",
             "../OurModelOutPut/Cases/user_weight.csv",
             self.result_output + "/user_score.csv",
             '../OurModelOutPut/Cases/difficulty_center.csv'
         )
         print("Thread Name:{} end user score digest.".format(self.name))
-        calculator.all_user_score()
+        self.result = calculator.all_user_score()
+
+    def __toGraph(self):
+        if(not os.path.exists(self.graph_output)):
+            os.mkdir(self.graph_output)
+        for line in self.result:
+            # line:"用户编号", "作业完成情况", "总评分", "每题综合分的字典", "每一类题的综合分的数组"
+            user_id = line[0]
+
+            # 绘制雷达图
+            labels = np.array(["排序算法", "查找算法", "图结构", "树结构", "数字结构", "字符串", "线性表", "数组"])
+            data = np.zeros([8,1])
+            for i in range(len(labels)):
+                if(labels[i] in line[4].keys()):
+                    data[i] = np.mean(line[4][labels[i]])
+            print(data)
+            # 设置字体
+            matplotlib.rcParams['font.family'] = 'SimHei'
+            matplotlib.rcParams['font.sans-serif'] = ['SimHei']
+            # 设置维度
+            nAttr = len(labels)
+            # 计算角度
+            angles = np.linspace(0, 2 * np.pi, nAttr, endpoint=False)
+            # 保证需要闭合，数据和角度
+            data = np.array(data)
+            data = np.concatenate((data, [data[0]]))
+            angles = np.concatenate((angles, [angles[0]]))
+            # 开始制图
+            plt.subplot(111, polar=True)
+            plt.plot(angles, data, 'bo-', color='g', linewidth=2)
+            plt.fill(angles, data, facecolor='g', alpha=0.25)
+            plt.thetagrids(angles * 180 / np.pi, labels)
+            plt.title(str(user_id) + '号用户能力图', pad=15)
+            plt.grid(True)
+            plt.savefig(self.graph_output + str(user_id) + "_score.jpg")
+            plt.show()
 
     def __clear_py_cache(self):
         '''
@@ -133,12 +207,10 @@ class Case_thread(threading.Thread):
             os.rmdir(dirpath)
 
 if __name__ == '__main__':
-    # curPath = os.path.abspath(os.path.dirname(__file__))
-    # # 获取项目根目录
-    # rootPath = curPath[:curPath.find("pythonImpl\\") + len("pythonImpl\\")]  # 获取myProject，也就是项目的根路径
-    # rootPath = rootPath.replace('\\','/')
-    # print(rootPath)
+    '''
+    CaseTest.json中最好只放置2位用户(效果好)
+    '''
     case_thread = Case_thread("Case-Test", "./JSON_source/CaseTest.json","./python_source/",
-                              "./CsvResult", "./Statistic/", "./Result/")
+                              "./Valid_Uploads", "./Statistic/", "./Result/", "./Graph/", "./User_Code_Style/")
     case_thread.start()
     case_thread.join()

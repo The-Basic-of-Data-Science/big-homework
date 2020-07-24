@@ -1,258 +1,2197 @@
 {
-  "3544": {
-    "user_id": 3544,
-    "cases": [
-      {
-        "case_id": "2908",
-        "case_type": "\u5b57\u7b26\u4e32",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5355\u8bcd\u5206\u7c7b_1581144899702.zip",
-        "final_score": 40,
-        "upload_records": [
-          {
-            "upload_id": 236494,
-            "upload_time": 1582023290656,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582023289869.zip",
-            "score": 40.0
-          },
-          {
-            "upload_id": 252563,
-            "upload_time": 1582557830339,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582557829552.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252565,
-            "upload_time": 1582557836610,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582557835991.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252576,
-            "upload_time": 1582558130645,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582558130012.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252577,
-            "upload_time": 1582558139684,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582558139071.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252578,
-            "upload_time": 1582558144348,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582558143538.zip",
-            "score": 0.0
-          }
+  "60654": {
+        "user_id": 60654,
+        "cases": [
+            {
+                "case_id": "2081",
+                "case_type": "\u5b57\u7b26\u4e32",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b50\u4e32\u67e5\u627e_1577868767370.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 292040,
+                        "upload_time": 1584589798909,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/60654/%E5%AD%90%E4%B8%B2%E6%9F%A5%E6%89%BE_1584589798090.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2936",
+                "case_type": "\u5b57\u7b26\u4e32",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7535\u8bdd\u53f7\u7801_1581089735969.zip",
+                "final_score": 0,
+                "upload_records": [
+                    {
+                        "upload_id": 265317,
+                        "upload_time": 1583065600422,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/60654/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81_1583065599648.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265318,
+                        "upload_time": 1583065609374,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/60654/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81_1583065608576.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265320,
+                        "upload_time": 1583065627170,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/60654/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81_1583065626384.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265322,
+                        "upload_time": 1583065640625,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/60654/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81_1583065639872.zip",
+                        "score": 0.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2474",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6700\u957f\u6709\u6548\u62ec\u53f7_1580472427940.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272498,
+                        "upload_time": 1583331647028,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7_1583331646267.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 272506,
+                        "upload_time": 1583331876847,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7_1583331876067.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2561",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8ba1\u7b97\u77e9\u9635\u5bf9\u7684\u603b\u548c_1580629330600.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272185,
+                        "upload_time": 1583325584265,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E8%AE%A1%E7%AE%97%E7%9F%A9%E9%98%B5%E5%AF%B9%E7%9A%84%E6%80%BB%E5%92%8C_1583325583495.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2186",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7279\u6b8a\u5e8f\u5217\u548c_1578276936192.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272252,
+                        "upload_time": 1583326701672,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E5%92%8C_1583326700892.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 272257,
+                        "upload_time": 1583326774583,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E5%92%8C_1583326773800.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 272277,
+                        "upload_time": 1583327123187,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E5%92%8C_1583327122429.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 272301,
+                        "upload_time": 1583327659152,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E5%92%8C_1583327658391.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 272306,
+                        "upload_time": 1583327721225,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E5%92%8C_1583327720439.zip",
+                        "score": 75.0
+                    },
+                    {
+                        "upload_id": 272318,
+                        "upload_time": 1583327861369,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E5%92%8C_1583327860612.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2185",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5e8f\u5217\u5143\u7d20_1578276704860.zip",
+                "final_score": 0,
+                "upload_records": [
+                    {
+                        "upload_id": 272423,
+                        "upload_time": 1583329890317,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%BA%8F%E5%88%97%E5%85%83%E7%B4%A0_1583329889470.zip",
+                        "score": 0.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2592",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u77e9\u5f62\u56f4\u6210\u4e00\u5708_1580709242736.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272475,
+                        "upload_time": 1583330998060,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%9F%A9%E5%BD%A2%E4%B8%8E%E5%9C%86%E5%BD%A2_1583330997286.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2482",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e00\u4e2a\u7b80\u5355\u7684\u5206\u6570_1580476514307.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273001,
+                        "upload_time": 1583377407756,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%86%E6%95%B0_1583377406943.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288407,
+                        "upload_time": 1584433763210,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%86%E6%95%B0_1584433762394.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288421,
+                        "upload_time": 1584434299993,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%86%E6%95%B0_1584434299216.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2184",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5dee\u5f02\u7cfb\u5217_1578276411758.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272189,
+                        "upload_time": 1583325690854,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%B7%AE%E5%BC%82%E5%BA%8F%E5%88%97_1583325690088.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 272193,
+                        "upload_time": 1583325707074,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%B7%AE%E5%BC%82%E5%BA%8F%E5%88%97_1583325706281.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2173",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7279\u6b8a\u5947\u6570\u548c_1578227956049.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272543,
+                        "upload_time": 1583333173707,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%89%B9%E6%AE%8A%E5%A5%87%E6%95%B0%E5%92%8C_1583333172912.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2183",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u603b\u548c\u7b2cN\u884c_1578276140585.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272155,
+                        "upload_time": 1583325011149,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E6%80%BB%E5%92%8C%E7%AC%ACN%E8%A1%8C_1583325010387.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 272157,
+                        "upload_time": 1583325031111,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E6%80%BB%E5%92%8C%E7%AC%ACN%E8%A1%8C_1583325030297.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2182",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b89\u5168\u6e38\u620f_1578275845234.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272130,
+                        "upload_time": 1583324495848,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%AE%89%E5%85%A8%E6%B8%B8%E6%88%8F_1583324494987.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2171",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u9694\u79bb\u94fe\u63a5\u5217\u8868\u4e2d\u7684\u5076\u6570\u548c\u5947\u6570\u8282\u70b9_1578225498823.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 288482,
+                        "upload_time": 1584436557160,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E9%9A%94%E7%A6%BB%E9%93%BE%E6%8E%A5%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%81%B6%E6%95%B0%E5%92%8C%E5%A5%87%E6%95%B0%E8%8A%82%E7%82%B9_1584436556421.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2181",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/X1\u5e8f\u5217_1578275363480.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272113,
+                        "upload_time": 1583323628669,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/X1%E5%BA%8F%E5%88%97_1583323627887.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2614",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7d22\u5f15\u8ba1\u6570_1580740517977.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 288271,
+                        "upload_time": 1584430941244,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%B4%A2%E5%BC%95%E8%AE%A1%E6%95%B0_1584430940203.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288294,
+                        "upload_time": 1584431218234,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%B4%A2%E5%BC%95%E8%AE%A1%E6%95%B0_1584431217410.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2558",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8ba1\u7b97\u9006\u8f6c_1580627331854.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265380,
+                        "upload_time": 1583066220285,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E8%AE%A1%E7%AE%97%E9%80%86%E8%BD%AC_1583066219480.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288463,
+                        "upload_time": 1584435850872,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E8%AE%A1%E7%AE%97%E9%80%86%E8%BD%AC_1584435850049.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2547",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8ba1\u7b97\u5dee\u5f02\u4e3ak\u7684\u4e0d\u91cd\u590d\u5bf9_1580613441446.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 288489,
+                        "upload_time": 1584436767042,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E8%AE%A1%E7%AE%97%E5%B7%AE%E5%BC%82%E4%B8%BAk%E7%9A%84%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AF%B9_1584436766245.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288490,
+                        "upload_time": 1584436783365,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E8%AE%A1%E7%AE%97%E5%B7%AE%E5%BC%82%E4%B8%BAk%E7%9A%84%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AF%B9_1584436782603.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288503,
+                        "upload_time": 1584437213435,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E8%AE%A1%E7%AE%97%E5%B7%AE%E5%BC%82%E4%B8%BAk%E7%9A%84%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AF%B9_1584437212636.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2589",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5362\u5361\u65af\u6570_1580708253148.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272445,
+                        "upload_time": 1583330414081,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%8D%A2%E5%8D%A1%E6%96%AF%E6%95%B0_1583330413249.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2610",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u957f\u5ea6\u603b\u548c_1580737573597.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273031,
+                        "upload_time": 1583378423802,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E9%95%BF%E5%BA%A6%E6%80%BB%E5%92%8C_1583378422953.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 288370,
+                        "upload_time": 1584433031561,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E9%95%BF%E5%BA%A6%E6%80%BB%E5%92%8C_1584433030822.zip",
+                        "score": 20.0
+                    },
+                    {
+                        "upload_id": 288394,
+                        "upload_time": 1584433554670,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E9%95%BF%E5%BA%A6%E6%80%BB%E5%92%8C_1584433553836.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 288395,
+                        "upload_time": 1584433588649,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E9%95%BF%E5%BA%A6%E6%80%BB%E5%92%8C_1584433587851.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2212",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u53f7\u7801\u4e0d\u8db3_1578289878596.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272489,
+                        "upload_time": 1583331345143,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%8F%B7%E7%A0%81%E4%B8%8D%E8%B6%B3_1583331344215.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2607",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7b49\u4e8e0\u30011\u548c2_1580736171649.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 272534,
+                        "upload_time": 1583332645985,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%AD%89%E4%BA%8E0%E6%88%961%E6%88%962_1583332645227.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 288227,
+                        "upload_time": 1584430435549,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E7%AD%89%E4%BA%8E0%E6%88%961%E6%88%962_1584430434762.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2617",
+                "case_type": "\u7ebf\u6027\u8868",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5305\u542bK\u4e2a\u7684\u5b50\u5b57\u7b26\u4e32\u7684\u8ba1\u6570_1580741312784.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 295574,
+                        "upload_time": 1584764839783,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%8C%85%E5%90%ABK%E4%B8%AA%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A1%E6%95%B0_1584764839011.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 295578,
+                        "upload_time": 1584765084277,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/60654/%E5%8C%85%E5%90%ABK%E4%B8%AA%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%AE%A1%E6%95%B0_1584765083496.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2176",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u540e\u7f00\u6392\u5e8f_1578238097987.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 233493,
+                        "upload_time": 1581917160696,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1581917159999.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 233756,
+                        "upload_time": 1581932968913,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1581932968062.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 235546,
+                        "upload_time": 1582005812833,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1582005812113.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 235549,
+                        "upload_time": 1582005901294,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1582005900338.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2395",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7b80\u5316\u9635\u5217_1580309957332.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284607,
+                        "upload_time": 1584265413149,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%AE%80%E5%8C%96%E9%98%B5%E5%88%97_1584265412397.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2373",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u65af\u8482\u514b\u52d2\u5c0f\u5077_1580288377900.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 285805,
+                        "upload_time": 1584336928062,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%96%AF%E8%92%82%E5%85%8B%E5%8B%92%E5%B0%8F%E5%81%B7_1584336927271.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2252",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8ba1\u6570\u5b57\u8bcd\u7684\u51fa\u73b0\u6b21\u6570_1578662468635.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 285811,
+                        "upload_time": 1584337539871,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E8%AE%A1%E6%95%B0%E5%AD%97%E8%AF%8D%E7%9A%84%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0_1584337539084.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 285819,
+                        "upload_time": 1584338023060,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E8%AE%A1%E6%95%B0%E5%AD%97%E8%AF%8D%E7%9A%84%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0_1584338022284.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2494",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7ffb\u8f6c\u5bf9_1580533703382.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291540,
+                        "upload_time": 1584578485510,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BF%BB%E8%BD%AC%E5%AF%B9_1584578484726.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 291541,
+                        "upload_time": 1584578498468,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BF%BB%E8%BD%AC%E5%AF%B9_1584578497682.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2394",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5c06\u6240\u6709\u96f6\u79fb\u52a8\u5230\u6570\u7ec4\u672b\u5c3e_1580308584619.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284610,
+                        "upload_time": 1584265490156,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%B0%86%E6%89%80%E6%9C%89%E9%9B%B6%E7%A7%BB%E5%8A%A8%E5%88%B0%E6%95%B0%E7%BB%84%E6%9C%AB%E5%B0%BE_1584265489391.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2371",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u62ef\u6551\u94a2\u94c1\u4fa0_1580287906143.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291739,
+                        "upload_time": 1584583996762,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%8B%AF%E6%95%91%E9%92%A2%E9%93%81%E4%BE%A0_1584583996015.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 291740,
+                        "upload_time": 1584584003968,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%8B%AF%E6%95%91%E9%92%A2%E9%93%81%E4%BE%A0_1584584003240.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 291742,
+                        "upload_time": 1584584015504,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%8B%AF%E6%95%91%E9%92%A2%E9%93%81%E4%BE%A0_1584584014723.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2392",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e58\u79ef\u76f8\u540c_1580305907167.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284619,
+                        "upload_time": 1584265697418,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%B9%98%E7%A7%AF%E7%9B%B8%E5%90%8C_1584265696696.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2193",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e8b\u60c5\u7684\u76f8\u4f3c\u5ea6_1578283308031.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236857,
+                        "upload_time": 1582029161542,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%8B%E6%83%85%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6_1582029160773.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 236860,
+                        "upload_time": 1582029182303,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%8B%E6%83%85%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6_1582029181635.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 237759,
+                        "upload_time": 1582072819945,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%8B%E6%83%85%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6_1582072819159.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 244292,
+                        "upload_time": 1582282446285,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%8B%E6%83%85%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6_1582282444851.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 244294,
+                        "upload_time": 1582282507510,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%8B%E6%83%85%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6_1582282506496.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 244299,
+                        "upload_time": 1582282648432,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%8B%E6%83%85%E7%9A%84%E7%9B%B8%E4%BC%BC%E5%BA%A6_1582282647430.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2701",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u627e\u51fa\u4e95\u5b57\u68cb\u7684\u83b7\u80dc\u8005_1580879162570.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236781,
+                        "upload_time": 1582028199620,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%89%BE%E5%87%BA%E4%BA%95%E5%AD%97%E6%A3%8B%E7%9A%84%E8%8E%B7%E8%83%9C%E8%80%85_1582028198837.zip",
+                        "score": 75.0
+                    },
+                    {
+                        "upload_id": 236806,
+                        "upload_time": 1582028474822,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%89%BE%E5%87%BA%E4%BA%95%E5%AD%97%E6%A3%8B%E7%9A%84%E8%8E%B7%E8%83%9C%E8%80%85_1582028473856.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2426",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e09\u5927\u5019\u9009\u4eba_1580437067105.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284395,
+                        "upload_time": 1584258549250,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%B8%89%E5%A4%A7%E5%80%99%E9%80%89%E4%BA%BA_1584258548449.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2425",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u67e5\u627e\u6700\u8fd1\u7684\u53f7\u7801_1580436786414.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284405,
+                        "upload_time": 1584258922200,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%9F%A5%E6%89%BE%E6%9C%80%E8%BF%91%E7%9A%84%E5%8F%B7%E7%A0%81_1584258921444.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2424",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5bfb\u627e\u5947\u6570_1580436517453.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284423,
+                        "upload_time": 1584259490357,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AF%BB%E6%89%BE%E5%A5%87%E6%95%B0_1584259489296.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 284427,
+                        "upload_time": 1584259583437,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AF%BB%E6%89%BE%E5%A5%87%E6%95%B0_1584259582681.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2203",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/LJJ\u7684\u5b57\u7b26\u4e32_1578287657460.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 244320,
+                        "upload_time": 1582283382444,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/LJJ%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2_1582283381733.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265005,
+                        "upload_time": 1583056663405,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/LJJ%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2_1583056662358.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2467",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e24\u4e2a\u6392\u5e8f\u6570\u7ec4\u7684\u7b2cK\u4e2a\u5143\u7d20_1580456827109.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273167,
+                        "upload_time": 1583384134656,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E7%AC%ACK%E4%B8%AA%E5%85%83%E7%B4%A0_1583384133820.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2423",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u53e6\u4e00\u4e2a\u6570\u7ec4\u7684\u6570\u7ec4\u5b50\u96c6_1580436211204.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284441,
+                        "upload_time": 1584260082846,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%BB%84%E5%AD%90%E9%9B%86_1584260082078.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284442,
+                        "upload_time": 1584260123671,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%BB%84%E5%AD%90%E9%9B%86_1584260122898.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2346",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u87ba\u65cb\u904d\u5386\u77e9\u9635_1580213547873.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 295243,
+                        "upload_time": 1584757021696,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E8%9E%BA%E6%97%8B%E9%81%8D%E5%8E%86%E7%9F%A9%E9%98%B5_1584757021026.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 295244,
+                        "upload_time": 1584757037898,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E8%9E%BA%E6%97%8B%E9%81%8D%E5%8E%86%E7%9F%A9%E9%98%B5_1584757037168.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2466",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8ba1\u7b97\u53ef\u80fd\u7684\u4e09\u89d2\u5f62_1580456177340.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273149,
+                        "upload_time": 1583382328781,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2_1583382327867.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2389",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6ce2\u6d6a\u6570\u7ec4_1580299515242.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284629,
+                        "upload_time": 1584266039096,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%B3%A2%E6%B5%AA%E6%95%B0%E7%BB%84_1584266038330.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 284630,
+                        "upload_time": 1584266042927,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%B3%A2%E6%B5%AA%E6%95%B0%E7%BB%84_1584266042154.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2345",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u67e5\u627e\u7f3a\u5931\u548c\u91cd\u590d_1580212520904.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 289622,
+                        "upload_time": 1584493296108,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%9F%A5%E6%89%BE%E7%BC%BA%E5%A4%B1%E5%92%8C%E9%87%8D%E5%A4%8D_1584493295208.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2344",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u65cb\u8f6c\u9635\u5217_1580212176814.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273210,
+                        "upload_time": 1583386359317,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%97%8B%E8%BD%AC%E9%98%B5%E5%88%97_1583386358525.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2388",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u68c0\u67e5\u4e24\u4e2a\u6570\u7ec4\u662f\u5426\u76f8\u7b49_1580299182125.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284646,
+                        "upload_time": 1584266623277,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%A3%80%E6%9F%A5%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E7%9B%B8%E7%AD%89_1584266622438.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2442",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6700\u5927\u95f4\u8ddd_1580447368478.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236408,
+                        "upload_time": 1582021037951,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%9C%80%E5%A4%A7%E9%97%B4%E8%B7%9D_1582021037181.zip",
+                        "score": 60.0
+                    },
+                    {
+                        "upload_id": 236433,
+                        "upload_time": 1582021400409,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%9C%80%E5%A4%A7%E9%97%B4%E8%B7%9D_1582021399517.zip",
+                        "score": 60.0
+                    },
+                    {
+                        "upload_id": 236634,
+                        "upload_time": 1582026076425,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%9C%80%E5%A4%A7%E9%97%B4%E8%B7%9D_1582026075654.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2209",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/TheABCDMurderer_1578289301451.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273159,
+                        "upload_time": 1583383501932,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/TheABCDMurderer_1583383501052.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 273160,
+                        "upload_time": 1583383530593,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/TheABCDMurderer_1583383529746.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 273161,
+                        "upload_time": 1583383567127,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/TheABCDMurderer_1583383566241.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2307",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u591a\u6570\u5143\u7d20_1580190831469.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236530,
+                        "upload_time": 1582024021275,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0_1582024020326.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2527",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u9910\u5385\u8fc7\u6ee4\u5668_1580557412562.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284565,
+                        "upload_time": 1584263973666,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E9%A4%90%E5%8E%85%E8%BF%87%E6%BB%A4%E5%99%A8_1584263972921.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 284588,
+                        "upload_time": 1584264541329,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E9%A4%90%E5%8E%85%E8%BF%87%E6%BB%A4%E5%99%A8_1584264540571.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2342",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u53cd\u8f6cK\u4e2a\u7ec4\u5143\u7d20_1580211252657.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273190,
+                        "upload_time": 1583385650769,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%8F%8D%E8%BD%ACK%E4%B8%AA%E7%BB%84%E5%85%83%E7%B4%A0_1583385645854.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 289612,
+                        "upload_time": 1584492621679,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%8F%8D%E8%BD%ACK%E4%B8%AA%E7%BB%84%E5%85%83%E7%B4%A0_1584492620942.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 289615,
+                        "upload_time": 1584492643806,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%8F%8D%E8%BD%ACK%E4%B8%AA%E7%BB%84%E5%85%83%E7%B4%A0_1584492643022.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2386",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u56db\u5143\u7d20_1580295765729.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284656,
+                        "upload_time": 1584266954653,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%9B%9B%E5%85%83%E7%B4%A0_1584266953912.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2341",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5408\u5e76\u65f6\u6ca1\u6709\u591a\u4f59\u7684\u7a7a\u95f4_1580210956158.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284437,
+                        "upload_time": 1584259954012,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%B8%8D%E5%8D%A0%E7%94%A8%E9%A2%9D%E5%A4%96%E7%A9%BA%E9%97%B4%E7%9A%84%E5%90%88%E5%B9%B6_1584259953195.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2340",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u56f0\u96e8\u6c34_1580210588017.zip",
+                "final_score": 25,
+                "upload_records": [
+                    {
+                        "upload_id": 284368,
+                        "upload_time": 1584257615995,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%9B%B0%E9%9B%A8%E6%B0%B4_1584257615226.zip",
+                        "score": 25.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2283",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5bf90\u30011\u548c2\u7684\u6570\u7ec4\u8fdb\u884c\u6392\u5e8f_1580044533249.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284446,
+                        "upload_time": 1584260244665,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AF%B90%E5%92%8C1%E5%92%8C2%E7%9A%84%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F_1584260243916.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284447,
+                        "upload_time": 1584260255604,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AF%B90%E5%92%8C1%E5%92%8C2%E7%9A%84%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F_1584260254830.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284448,
+                        "upload_time": 1584260269881,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AF%B90%E5%92%8C1%E5%92%8C2%E7%9A%84%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F_1584260269077.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284450,
+                        "upload_time": 1584260434037,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AF%B90%E5%92%8C1%E5%92%8C2%E7%9A%84%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F_1584260433263.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2061",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6c42\u5230\u8fbe\u6570\u7ec4\u672b\u7aef\u7684\u6700\u5c0f\u79fb\u52a8\u6570_1577371584339.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236644,
+                        "upload_time": 1582026278014,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80_1582026277280.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 244298,
+                        "upload_time": 1582282624125,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%9F%BA%E7%A1%80_1582282623407.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2280",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6570\u7ec4\u4e2d\u7f3a\u5c11\u6570\u5b57_1580021731174.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284454,
+                        "upload_time": 1584260665147,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%BC%BA%E5%B0%91%E6%95%B0%E5%AD%97_1584260664220.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284458,
+                        "upload_time": 1584260711551,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%BC%BA%E5%B0%91%E6%95%B0%E5%AD%97_1584260710803.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2438",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u989c\u8272\u5206\u7c7b_1580444384416.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236374,
+                        "upload_time": 1582020419722,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB_1582020418820.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2339",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/Inversion of array_1580210123436.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273192,
+                        "upload_time": 1583385824401,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%80%92%E7%BD%AE%E4%B8%AA%E6%95%B0_1583385823548.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2338",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6210\u5bf9\u5143\u7d20_1580209509978.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273176,
+                        "upload_time": 1583384698856,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%88%90%E5%AF%B9%E5%85%83%E7%B4%A0_1583384698083.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2359",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e09\u5143\u7ec4\u8ba1\u6570_1580285767832.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291861,
+                        "upload_time": 1584586226877,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%B8%89%E5%85%83%E7%BB%84%E8%AE%A1%E6%95%B0_1584586226098.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2358",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/k\u4e2a\u6700\u5927\u5143\u7d20_1580285444507.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291875,
+                        "upload_time": 1584586469031,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/k%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0_1584586468245.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2357",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u67e5\u627e\u7ed9\u5b9a\u603b\u548c\u7684\u6240\u6709\u5bf9_1580281101863.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291891,
+                        "upload_time": 1584586821775,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%9F%A5%E6%89%BE%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E6%89%80%E6%9C%89%E5%AF%B9_1584586821053.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2279",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7ed9\u5b9a\u603b\u548c\u7684\u5b50\u6570\u7ec4_1580020054641.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284465,
+                        "upload_time": 1584261066133,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84_1584261065356.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284468,
+                        "upload_time": 1584261202187,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84_1584261201426.zip",
+                        "score": 60.0
+                    },
+                    {
+                        "upload_id": 284470,
+                        "upload_time": 1584261246963,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84_1584261246201.zip",
+                        "score": 20.0
+                    },
+                    {
+                        "upload_id": 284471,
+                        "upload_time": 1584261267445,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84_1584261266663.zip",
+                        "score": 80.0
+                    },
+                    {
+                        "upload_id": 284473,
+                        "upload_time": 1584261318036,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84_1584261317245.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 284477,
+                        "upload_time": 1584261441295,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%BB%99%E5%AE%9A%E6%80%BB%E5%92%8C%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84_1584261440474.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2356",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5de6\u4fa7\u8f83\u5c0f\u800c\u53f3\u4fa7\u8f83\u5927\u7684\u5143\u7d20_1580280620990.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291928,
+                        "upload_time": 1584587312598,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%B7%A6%E4%BE%A7%E8%BE%83%E5%B0%8F%E8%80%8C%E5%8F%B3%E4%BE%A7%E8%BE%83%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0_1584587311821.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 293546,
+                        "upload_time": 1584665083219,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%B7%A6%E4%BE%A7%E8%BE%83%E5%B0%8F%E8%80%8C%E5%8F%B3%E4%BE%A7%E8%BE%83%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0_1584665082467.zip",
+                        "score": 20.0
+                    },
+                    {
+                        "upload_id": 293548,
+                        "upload_time": 1584665139060,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%B7%A6%E4%BE%A7%E8%BE%83%E5%B0%8F%E8%80%8C%E5%8F%B3%E4%BE%A7%E8%BE%83%E5%A4%A7%E7%9A%84%E5%85%83%E7%B4%A0_1584665138287.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2179",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b57\u7b26\u4e32_1578245780260.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 236540,
+                        "upload_time": 1582024312725,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2_1582024312102.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 236556,
+                        "upload_time": 1582024694618,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2_1582024693929.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 236572,
+                        "upload_time": 1582025161898,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2_1582025161074.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2278",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/Xor\u8fd0\u7b97_1579951483405.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 284512,
+                        "upload_time": 1584262434127,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/Xor%E8%BF%90%E7%AE%97_1584262433294.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2498",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6309\u5947\u5076\u6392\u5e8f\u6570\u7ec4_1580536106585.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291846,
+                        "upload_time": 1584585874118,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%8C%89%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84_1584585873306.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 291849,
+                        "upload_time": 1584585969606,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E6%8C%89%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84_1584585968806.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2211",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7687\u5ba4\u592b\u4eba\u7684\u540d\u5b57_1578290259363.zip",
+                "final_score": 60,
+                "upload_records": [
+                    {
+                        "upload_id": 293568,
+                        "upload_time": 1584666595262,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%9A%87%E5%AE%A4%E5%A4%AB%E4%BA%BA%E7%9A%84%E5%90%8D%E5%AD%97_1584666594482.zip",
+                        "score": 40.0
+                    },
+                    {
+                        "upload_id": 293579,
+                        "upload_time": 1584667289370,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E7%9A%87%E5%AE%A4%E5%A4%AB%E4%BA%BA%E7%9A%84%E5%90%8D%E5%AD%97_1584667288518.zip",
+                        "score": 60.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2718",
+                "case_type": "\u6570\u7ec4",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4ea4\u6362\u5b57\u7b26\u4e32\u4e2d\u7684\u5143\u7d20_1580893832086.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 273075,
+                        "upload_time": 1583379202900,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%A4%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0_1583379202094.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 273122,
+                        "upload_time": 1583380641012,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%A4%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0_1583380640251.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 273138,
+                        "upload_time": 1583381175071,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/60654/%E4%BA%A4%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0_1583381174302.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2741",
+                "case_type": "\u67e5\u627e\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6700\u957f\u8fde\u7eed\u9012\u589e\u5e8f\u5217_1580964533662.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 292026,
+                        "upload_time": 1584589440568,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4242/60654/%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E9%80%92%E5%A2%9E%E5%BA%8F%E5%88%97_1584589439382.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2535",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6700\u591a\u80fd\u5b8c\u6210\u6392\u5e8f\u7684\u5757_1580566432492.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 266192,
+                        "upload_time": 1583128390527,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97_1583128389835.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 266195,
+                        "upload_time": 1583128504394,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%9C%80%E5%A4%9A%E8%83%BD%E5%AE%8C%E6%88%90%E6%8E%92%E5%BA%8F%E7%9A%84%E5%9D%97_1583128503509.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2534",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5408\u5e76K\u4e2a\u6392\u5e8f\u6570\u7ec4_1580565261018.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265224,
+                        "upload_time": 1583063631251,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%90%88%E5%B9%B6K%E4%B8%AA%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84_1583063630432.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2412",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5faa\u73af\u6392\u5e8f_1580375704830.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265036,
+                        "upload_time": 1583057670631,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%BE%AA%E7%8E%AF%E6%8E%92%E5%BA%8F_1583057669417.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2444",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b58\u5728\u91cd\u590d\u5143\u7d20_1580448429544.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265177,
+                        "upload_time": 1583062356334,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0_1583062355582.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265178,
+                        "upload_time": 1583062425819,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0_1583062425048.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 271977,
+                        "upload_time": 1583319876218,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0_1583319875481.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 271984,
+                        "upload_time": 1583319949417,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0_1583319948683.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 272034,
+                        "upload_time": 1583321333345,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0_1583321332596.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2387",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5c40\u90e8\u6392\u5e8f_1580299140510.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265092,
+                        "upload_time": 1583059392257,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583059391568.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265110,
+                        "upload_time": 1583060158880,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583060158194.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 265111,
+                        "upload_time": 1583060173452,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583060172704.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 265123,
+                        "upload_time": 1583060552980,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583060552197.zip",
+                        "score": 25.0
+                    },
+                    {
+                        "upload_id": 265128,
+                        "upload_time": 1583060618105,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583060617321.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265129,
+                        "upload_time": 1583060675248,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583060674443.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265148,
+                        "upload_time": 1583061255088,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%B1%80%E9%83%A8%E6%8E%92%E5%BA%8F_1583061254301.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2441",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6392\u5e8f\u94fe\u8868_1580446556918.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265203,
+                        "upload_time": 1583063176865,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8_1583063176078.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2440",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5bf9\u94fe\u8868\u8fdb\u884c\u63d2\u5165\u6392\u5e8f_1580446182840.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265166,
+                        "upload_time": 1583061972102,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AF%B9%E9%93%BE%E8%A1%A8%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F_1583061971277.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 265176,
+                        "upload_time": 1583062303131,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E5%AF%B9%E9%93%BE%E8%A1%A8%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F_1583062302312.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2396",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6392\u5e8f\u673a\u68b0\u81c2_1580358588714.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265998,
+                        "upload_time": 1583114968925,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583114968194.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 266000,
+                        "upload_time": 1583115091857,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583115091114.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 266001,
+                        "upload_time": 1583115106082,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583115105343.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 266002,
+                        "upload_time": 1583115121198,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583115120425.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 266005,
+                        "upload_time": 1583115558211,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583115557503.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 266185,
+                        "upload_time": 1583128218970,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583128218231.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 271878,
+                        "upload_time": 1583316070407,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583316069699.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 271882,
+                        "upload_time": 1583316206345,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82_1583316205631.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2152",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u9b54\u65b9\u4ff1\u4e50\u90e8_1578209813393.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 271947,
+                        "upload_time": 1583319000199,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E9%AD%94%E6%96%B9%E4%BF%B1%E4%B9%90%E9%83%A8_1583318999296.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2490",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e24\u4e2a\u6570\u7ec4\u7684\u4ea4\u96c6_1580487351779.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265022,
+                        "upload_time": 1583057092546,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86_1583057091714.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265023,
+                        "upload_time": 1583057107243,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86_1583057106436.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 265025,
+                        "upload_time": 1583057162327,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86_1583057161512.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 265061,
+                        "upload_time": 1583058162079,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86_1583058161291.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2390",
+                "case_type": "\u6392\u5e8f\u7b97\u6cd5",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6392\u5e8f\u4ea4\u6362_1580303259115.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 265161,
+                        "upload_time": 1583061837459,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4243/60654/%E6%8E%92%E5%BA%8F%E4%BA%A4%E6%8D%A2_1583061836382.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2070",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/Pow(x, n)_1577688408110.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 245437,
+                        "upload_time": 1582338642607,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%B1%82%E5%B9%82_1582338641846.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2111",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e11\u6570 II_1578051262854.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291969,
+                        "upload_time": 1584588148207,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E4%B8%91%E6%95%B0II_1584588147465.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2110",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e11\u6570_1578051147092.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 291952,
+                        "upload_time": 1584587844767,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E4%B8%91%E6%95%B0_1584587844030.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 291960,
+                        "upload_time": 1584588023460,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E4%B8%91%E6%95%B0_1584588022663.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2153",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6574\u6570\u53cd\u8f6c_1577412407681.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 237779,
+                        "upload_time": 1582074368353,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC_1582074367626.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 237784,
+                        "upload_time": 1582074612788,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC_1582074612051.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 244650,
+                        "upload_time": 1582289271922,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC_1582289271205.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2096",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/x \u7684\u5e73\u65b9\u6839_1578047147585.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 245514,
+                        "upload_time": 1582340474629,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9_1582340473953.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 245516,
+                        "upload_time": 1582340486109,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9_1582340485384.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 245518,
+                        "upload_time": 1582340509717,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9_1582340509031.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2095",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/ \u4e8c\u8fdb\u5236\u6c42\u548c_1578046703759.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 253998,
+                        "upload_time": 1582628779116,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C_1582628778426.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2094",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6709\u6548\u6570\u5b57_1578046417861.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 254173,
+                        "upload_time": 1582633450759,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97_1582633449927.zip",
+                        "score": 75.0
+                    },
+                    {
+                        "upload_id": 295447,
+                        "upload_time": 1584761521793,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97_1584761521022.zip",
+                        "score": 75.0
+                    },
+                    {
+                        "upload_id": 295448,
+                        "upload_time": 1584761535207,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97_1584761534360.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2093",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7b2ck\u4e2a\u6392\u5217_1577688544639.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 295477,
+                        "upload_time": 1584762247339,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97_1584762246572.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 295501,
+                        "upload_time": 1584762699649,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97_1584762698892.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2108",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6570\u5b57 1 \u7684\u4e2a\u6570_1578050473039.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 254191,
+                        "upload_time": 1582633834426,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B0%E5%AD%971%E7%9A%84%E4%B8%AA%E6%95%B0_1582633833588.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 295535,
+                        "upload_time": 1584763433139,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B0%E5%AD%971%E7%9A%84%E4%B8%AA%E6%95%B0_1584763432349.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2106",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u57fa\u672c\u8ba1\u7b97\u5668_1578050148042.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 295528,
+                        "upload_time": 1584763129771,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%9F%BA%E6%9C%AC%E8%AE%A1%E7%AE%97%E5%99%A8_1584763129028.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2127",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8d85\u7ea7\u6b21\u65b9_1578119933462.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 237764,
+                        "upload_time": 1582073948513,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9_1582073947796.zip",
+                        "score": 33.33
+                    },
+                    {
+                        "upload_id": 237766,
+                        "upload_time": 1582074010784,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9_1582074010064.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 237768,
+                        "upload_time": 1582074048513,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9_1582074047745.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 244323,
+                        "upload_time": 1582283425539,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9_1582283424822.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 244486,
+                        "upload_time": 1582287039124,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%B6%85%E7%BA%A7%E6%AC%A1%E6%96%B9_1582287038313.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2126",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6700\u5927\u6574\u9664\u5b50\u96c6_1578119645442.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 253853,
+                        "upload_time": 1582623818304,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%9C%80%E5%A4%A7%E6%95%B4%E9%99%A4%E5%AD%90%E9%9B%86_1582623817567.zip",
+                        "score": 66.67
+                    },
+                    {
+                        "upload_id": 253859,
+                        "upload_time": 1582623980632,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%9C%80%E5%A4%A7%E6%95%B4%E9%99%A4%E5%AD%90%E9%9B%86_1582623979913.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2069",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b57\u7b26\u4e32\u76f8\u4e58_1577687896817.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 245422,
+                        "upload_time": 1582338247823,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E4%B9%98_1582338247097.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2068",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u4e24\u6570\u76f8\u9664_1577685525513.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 245420,
+                        "upload_time": 1582338189046,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4_1582338188344.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 253820,
+                        "upload_time": 1582622887639,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E4%B8%A4%E6%95%B0%E7%9B%B8%E9%99%A4_1582622886855.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2109",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5404\u4f4d\u76f8\u52a0_1578051032564.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 254210,
+                        "upload_time": 1582634058647,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0_1582634057796.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 254234,
+                        "upload_time": 1582634390960,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%90%84%E4%BD%8D%E7%9B%B8%E5%8A%A0_1582634390137.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2584",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/Nim \u6e38\u620f_1580703874230.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 245444,
+                        "upload_time": 1582338747629,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/Nim%E6%B8%B8%E6%88%8F_1582338746859.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2067",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6574\u6570\u8f6c\u7f57\u9a6c\u6570\u5b57_1577685311995.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 253812,
+                        "upload_time": 1582622780599,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97_1582622779844.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2100",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u9636\u4e58\u540e\u7684\u96f6_1578048826487.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 254037,
+                        "upload_time": 1582630633323,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E9%98%B6%E4%B9%98%E5%90%8E%E7%9A%84%E9%9B%B6_1582630632581.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2122",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6c34\u58f6\u95ee\u9898_1578056371391.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 254087,
+                        "upload_time": 1582632402776,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%B0%B4%E5%A3%B6%E9%97%AE%E9%A2%98_1582632401821.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2121",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/ \u8ba1\u7b97\u5404\u4e2a\u4f4d\u6570\u4e0d\u540c\u7684\u6570\u5b57\u4e2a\u6570_1578056187275.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 254157,
+                        "upload_time": 1582633151152,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%AE%A1%E7%AE%97%E5%90%84%E4%B8%AA%E4%BD%8D%E6%95%B0%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%AA%E6%95%B0_1582633146470.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 292002,
+                        "upload_time": 1584588764309,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%AE%A1%E7%AE%97%E5%90%84%E4%B8%AA%E4%BD%8D%E6%95%B0%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%AA%E6%95%B0_1584588759668.zip",
+                        "score": 0.0
+                    },
+                    {
+                        "upload_id": 292017,
+                        "upload_time": 1584589196581,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%AE%A1%E7%AE%97%E5%90%84%E4%B8%AA%E4%BD%8D%E6%95%B0%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%AA%E6%95%B0_1584589195810.zip",
+                        "score": 25.0
+                    },
+                    {
+                        "upload_id": 293616,
+                        "upload_time": 1584668908900,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%AE%A1%E7%AE%97%E5%90%84%E4%B8%AA%E4%BD%8D%E6%95%B0%E4%B8%8D%E5%90%8C%E7%9A%84%E6%95%B0%E5%AD%97%E4%B8%AA%E6%95%B0_1584668908171.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2065",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b57\u7b26\u4e32\u8f6c\u6362\u6574\u6570_1577685079613.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 245026,
+                        "upload_time": 1582296304499,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0_1582296303758.zip",
+                        "score": 25.0
+                    },
+                    {
+                        "upload_id": 253776,
+                        "upload_time": 1582621236262,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0_1582621235447.zip",
+                        "score": 25.0
+                    },
+                    {
+                        "upload_id": 253778,
+                        "upload_time": 1582621336821,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0_1582621336062.zip",
+                        "score": 25.0
+                    },
+                    {
+                        "upload_id": 253779,
+                        "upload_time": 1582621353005,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0_1582621352046.zip",
+                        "score": 25.0
+                    },
+                    {
+                        "upload_id": 295316,
+                        "upload_time": 1584758742200,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0_1584758741274.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2120",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u6574\u6570\u62c6\u5206_1578055217390.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 289717,
+                        "upload_time": 1584495913928,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86_1584495913231.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2064",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u7f57\u9a6c\u6570\u5b57\u8f6c\u6574\u6570_1577682190777.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 244980,
+                        "upload_time": 1582295062692,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0_1582295061920.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2063",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u56de\u6587\u6570_1577681657900.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 244919,
+                        "upload_time": 1582293714039,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%9B%9E%E6%96%87%E6%95%B0_1582293713332.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2119",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8def\u5f84\u4ea4\u53c9_1578055074509.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 289682,
+                        "upload_time": 1584495244911,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E8%B7%AF%E5%BE%84%E4%BA%A4%E5%8F%89_1584495244188.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2114",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b8c\u5168\u5e73\u65b9\u6570_1578052819098.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 293622,
+                        "upload_time": 1584669200264,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0_1584669199518.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2134",
+                "case_type": "\u6570\u5b57\u64cd\u4f5c",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u53ef\u601c\u7684\u5c0f\u732a_1578123873409.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 244530,
+                        "upload_time": 1582287755346,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%8F%AF%E6%80%9C%E7%9A%84%E5%B0%8F%E7%8C%AA_1582287754595.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 244627,
+                        "upload_time": 1582288889115,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%8F%AF%E6%80%9C%E7%9A%84%E5%B0%8F%E7%8C%AA_1582288888416.zip",
+                        "score": 50.0
+                    },
+                    {
+                        "upload_id": 244727,
+                        "upload_time": 1582290384722,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%8F%AF%E6%80%9C%E7%9A%84%E5%B0%8F%E7%8C%AA_1582290383976.zip",
+                        "score": 100.0
+                    },
+                    {
+                        "upload_id": 244813,
+                        "upload_time": 1582291513392,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4244/60654/%E5%8F%AF%E6%80%9C%E7%9A%84%E5%B0%8F%E7%8C%AA_1582291512644.zip",
+                        "score": 100.0
+                    }
+                ]
+            },
+            {
+                "case_id": "2080",
+                "case_type": "\u56fe\u7ed3\u6784",
+                "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5e7f\u5ea6\u4f18\u5148\u904d\u5386\u56fe_1577867780412.zip",
+                "final_score": 100,
+                "upload_records": [
+                    {
+                        "upload_id": 295303,
+                        "upload_time": 1584758337596,
+                        "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4247/60654/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E5%9B%BE_1584758336876.zip",
+                        "score": 100.0
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "case_id": "2172",
-        "case_type": "\u7ebf\u6027\u8868",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u540e\u7f00\u8f6c\u4e2d\u7f00_1578227554409.zip",
-        "final_score": 100,
-        "upload_records": [
-          {
-            "upload_id": 268885,
-            "upload_time": 1583213500962,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/3544/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80_1583213500044.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 268889,
-            "upload_time": 1583213531808,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/3544/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80_1583213530910.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 268891,
-            "upload_time": 1583213534478,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/3544/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80_1583213533606.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 268892,
-            "upload_time": 1583213537387,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4239/3544/%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80_1583213536563.zip",
-            "score": 100.0
-          }
-        ]
-      },
-      {
-        "case_id": "2179",
-        "case_type": "\u6570\u7ec4",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5b57\u7b26\u4e32_1578245780260.zip",
-        "final_score": 100,
-        "upload_records": []
-      },
-      {
-        "case_id": "2176",
-        "case_type": "\u6570\u7ec4",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u540e\u7f00\u6392\u5e8f_1578238097987.zip",
-        "final_score": 50,
-        "upload_records": [
-          {
-            "upload_id": 234524,
-            "upload_time": 1581948554050,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/3544/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1581948553391.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 234528,
-            "upload_time": 1581948569714,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/3544/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1581948568939.zip",
-            "score": 50.0
-          },
-          {
-            "upload_id": 235147,
-            "upload_time": 1581995633164,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/3544/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1581995632462.zip",
-            "score": 50.0
-          },
-          {
-            "upload_id": 239384,
-            "upload_time": 1582105168424,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/3544/%E5%90%8E%E7%BC%80%E6%8E%92%E5%BA%8F_1582105167736.zip",
-            "score": 50.0
-          }
-        ]
-      },
-      {
-        "case_id": "2307",
-        "case_type": "\u6570\u7ec4",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u591a\u6570\u5143\u7d20_1580190831469.zip",
-        "final_score": 25,
-        "upload_records": [
-          {
-            "upload_id": 283563,
-            "upload_time": 1584197129500,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4240/3544/%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A0_1584197128695.zip",
-            "score": 25.0
-          }
-        ]
-      },
-      {
-        "case_id": "2804",
-        "case_type": "\u6570\u7ec4",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u68ee\u96c5\u5b66\u52a0\u6cd5_1581072797512.zip",
-        "final_score": 0,
-        "upload_records": [
-          {
-            "upload_id": 239258,
-            "upload_time": 1582103356125,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4241/3544/%E6%A3%AE%E9%9B%85%E5%AD%A6%E5%8A%A0%E6%B3%95_1582103355267.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 246142,
-            "upload_time": 1582354682364,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4241/3544/%E6%A3%AE%E9%9B%85%E5%AD%A6%E5%8A%A0%E6%B3%95_1582354681537.zip",
-            "score": 0.0
-          }
-        ]
-      },
-      {
-        "case_id": "2908",
-        "case_type": "\u5b57\u7b26\u4e32",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5355\u8bcd\u5206\u7c7b_1581144899702.zip",
-        "final_score": 0,
-        "upload_records": [
-          {
-            "upload_id": 236494,
-            "upload_time": 1582023290656,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4238/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582023289869.zip",
-            "score": 40.0
-          },
-          {
-            "upload_id": 252563,
-            "upload_time": 1582557830339,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582557829552.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252565,
-            "upload_time": 1582557836610,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582557835991.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252576,
-            "upload_time": 1582558130645,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582558130012.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252577,
-            "upload_time": 1582558139684,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582558139071.zip",
-            "score": 0.0
-          },
-          {
-            "upload_id": 252578,
-            "upload_time": 1582558144348,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4249/3544/%E5%8D%95%E8%AF%8D%E5%88%86%E7%B1%BB_1582558143538.zip",
-            "score": 0.0
-          }
-        ]
-      },
-      {
-        "case_id": "2456",
-        "case_type": "\u6570\u7ec4",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u8ba1\u7b97\u53f3\u4fa7\u5c0f\u4e8e\u5f53\u524d\u5143\u7d20\u7684\u4e2a\u6570_1580451904729.zip",
-        "final_score": 100,
-        "upload_records": [
-          {
-            "upload_id": 256169,
-            "upload_time": 1582719194822,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4257/3544/%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0_1582719193939.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 256175,
-            "upload_time": 1582719221341,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4257/3544/%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0_1582719220548.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 256176,
-            "upload_time": 1582719223479,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4257/3544/%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0_1582719222648.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 256177,
-            "upload_time": 1582719226429,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4257/3544/%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0_1582719225637.zip",
-            "score": 100.0
-          },
-          {
-            "upload_id": 256178,
-            "upload_time": 1582719228507,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4257/3544/%E8%AE%A1%E7%AE%97%E5%8F%B3%E4%BE%A7%E5%B0%8F%E4%BA%8E%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%AA%E6%95%B0_1582719227703.zip",
-            "score": 100.0
-          }
-        ]
-      },
-      {
-        "case_id": "2450",
-        "case_type": "\u67e5\u627e\u7b97\u6cd5",
-        "case_zip": "http://mooctest-site.oss-cn-shanghai.aliyuncs.com/target/\u5728\u6392\u5e8f\u6570\u7ec4\u4e2d\u67e5\u627e\u5143\u7d20\u7684\u7b2c\u4e00\u4e2a\u548c\u6700\u540e\u4e00\u4e2a\u4f4d\u7f6e_1580449475334.zip",
-        "final_score": 20,
-        "upload_records": [
-          {
-            "upload_id": 240848,
-            "upload_time": 1582131859242,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4262/3544/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE_1582131858473.zip",
-            "score": 20.0
-          },
-          {
-            "upload_id": 240849,
-            "upload_time": 1582131875307,
-            "code_url": "http://mooctest-dev.oss-cn-shanghai.aliyuncs.com/data/answers/4262/3544/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE_1582131874386.zip",
-            "score": 20.0
-          }
-        ]
-      }
-    ]
-  }
+    }
 }

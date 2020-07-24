@@ -313,9 +313,10 @@ class Calculator:
     def all_user_score(self):
         '''
         获取所有用户的计算后最终得分，并输出
-        :return:
+        :return: 所有数据
         '''
         path = "/".join(self.RESULT.split("/")[:-1])
+        result = []
         if(not os.path.exists(path)):
             os.mkdir(path)
         with open(self.RESULT, 'w', encoding="utf-8", newline="") as f:
@@ -324,6 +325,8 @@ class Calculator:
             for user in self.raw_data:
                 row = self.one_user_score(user)
                 writer.writerow(row)
+                result.append(row)
+        return result
 
 if __name__ == '__main__':
     calculator = Calculator(
