@@ -65,11 +65,11 @@ class Case_thread(threading.Thread):
         if(not os.path.exists(self.source)):
             print("没有找到这个用户")
             return
-        # self.__retrieve_python()
-        # self.__valid_uploads()
-        # self.__statistics()
-        # self.__user_code_style_score()
-        # self.__user_valid()
+        self.__retrieve_python()
+        self.__valid_uploads()
+        self.__statistics()
+        self.__user_code_style_score()
+        self.__user_valid()
         self.__user_score()
         self.__rank()
 
@@ -278,7 +278,7 @@ class Case_thread(threading.Thread):
 
 # 推荐使用这两位用户 60778 60725
 if __name__ == '__main__':
-    user_id = "60581"
+    user_id = "3544"
     case_thread = Case_thread("User-" + user_id, user_id)
     case_thread.start()
     case_thread.join()
