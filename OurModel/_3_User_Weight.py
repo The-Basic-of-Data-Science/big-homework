@@ -108,7 +108,8 @@ class GetWeightClass:
 
 
 if __name__ == '__main__':
-    pca = GetWeightClass("../OurModelOutPut/Cases/action_statistics.csv",'../OurModelOutPut/Cases/test_score.csv')
+    pca = GetWeightClass("../OurModelOutPut/Cases/action_statistics.csv",
+                         '../OurModelOutPut/Cases/user_weight.csv')
     pca.get_weight()
 
 

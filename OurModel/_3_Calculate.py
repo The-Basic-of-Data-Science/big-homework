@@ -8,7 +8,7 @@ import json
 import csv
 import numpy as np
 from matplotlib import pyplot as plt
-from sklearn import cluster
+
 
 # 最低难度
 MIN_DIFFICULTY = 0.1
@@ -16,21 +16,9 @@ MIN_DIFFICULTY = 0.1
 MAX_DIFFICULTY = 0.8
 # 风格分数占比
 STYLE_RATE = 1 - MAX_DIFFICULTY
-# 代码生难度的八分类的中心
-RAW_DIFFICULTY_CENTERS = [
-    [89.31476036273146, 99.95670995670996, 99.99999999999999, 0.9887123025710105, 3.8244682935767487],
-    [77.08557872195003, 99.42182170542635, 99.89662790697673, 0.9784128098927094, 3.272016744783012],
-    [63.93237323484452, 99.30656934306569, 99.99999999999999, 0.9840112671523445, 2.648851686595397],
-    [62.38312388242798, 75.79144444444445, 99.42588888888889, 0.9526370988656747, 2.155258789004564],
-    [54.40148769029594, 50.440916666666666, 100.0, 0.9395351423012342, 2.047442274587258],
-    [51.79772540650981, 50.629333333333335, 52.444333333333326, 0.8997904525730938, 1.749359650333929],
-    [45.28810501196811, 46.45368421052632, 0.43855263157897184, 0.903700362948732, 1.5345727988329327],
-    [35.63325519664818, 7.505283018867928, 0.37735849056606696, 0.933955219472865, 1.6191765029745437]
-]
 # 根据绝大多数原始编码风格分的分布得到范围 [-25, 10]
 MIN_CODE_STYLE_SCORE = -25
 MAX_CODE_STYLE_SCORE = 10
-
 
 class Calculator:
     TEST_DATA = ''
@@ -56,7 +44,8 @@ class Calculator:
     case_type = {}
 
 
-    def __init__(self, TEST_DATA, USER_RESULT, SCORE_STATISTICS, CASES_DETAIL, VALID, TEST_SCORE, RESULT):
+    def __init__(self, TEST_DATA, USER_RESULT, SCORE_STATISTICS,
+                 CASES_DETAIL, VALID, TEST_SCORE, RESULT, CENTER):
         '''
         类构造方法
         :param TEST_DATA: JSON格式的原始数据
@@ -66,6 +55,7 @@ class Calculator:
         :param VALID: 每位每题有效提交信息
         :param TEST_SCORE: 用户的题目分数权重信息
         :param RESULT: 用户最后评分输出位置
+        :param CENTER: 将八分类中心读入
         '''
         self.TEST_DATA = TEST_DATA
         self.USER_RESULT = USER_RESULT
@@ -74,6 +64,12 @@ class Calculator:
         self.VALID = VALID
         self.TEST_SCORE = TEST_SCORE
         self.RESULT = RESULT
+
+        # 代码生难度的八分类的中心
+        self.RAW_DIFFICULTY_CENTERS = []
+        cr = csv.reader(open(CENTER), delimiter=",")
+        for line in cr:
+            self.RAW_DIFFICULTY_CENTERS.append(list(map(eval,line)))
 
         with open(self.TEST_DATA, 'r', encoding='utf-8') as f:
             # 获取原始数据
@@ -90,26 +86,6 @@ class Calculator:
         self.get_test_score()
         # 获取题目类型
         self.get_case_type()
-
-    def pre_get_raw_difficulty_centers(self):
-        '''
-        预先使用K-mean++方法求出生难度的分类中心
-        :return:
-        '''
-        # 分数数据
-        scores = self.__get_raw_scores()
-        # 生难度
-        raw_difficulty = []
-        for case in scores:
-            raw_difficulty.append(self.__get_raw_difficulty_from_score(scores[case]))
-        data = raw_difficulty
-        # 进行八分类
-        clf = cluster.KMeans(init='k-means++', n_clusters=8, random_state=794780360)
-        # 执行聚类算法
-        clf.fit(data)
-        # 输出八分类点
-        print([list(center) for center in clf.cluster_centers_])
-        # TODO 有没有什么指标能展示出来聚类效果，建议放一张图片
 
     def pre_get_code_style_score_dist(self):
         '''
@@ -133,7 +109,6 @@ class Calculator:
         plt.ylabel('number')
         plt.xlabel('score ( = x * 5 - 1710 )')
         plt.show()
-
 
     def __get_raw_scores(self):
         '''
@@ -167,7 +142,6 @@ class Calculator:
         # （用例总数：平均提交次数）换算难度
         tim = int(score[6]) / float(score[5])
         return [avg, med, cmn, rte, tim]
-        
 
     def get_difficulty(self):
         '''
@@ -183,10 +157,10 @@ class Calculator:
         for case in scores:
             raw_difficulty = self.__get_raw_difficulty_from_score(scores[case])
             # 计算离该题生难度最接近的中心点的下标
-            index = np.argmin([distance(raw_difficulty, center) for center in RAW_DIFFICULTY_CENTERS])
+            index = np.argmin([distance(raw_difficulty, center) for center in self.RAW_DIFFICULTY_CENTERS])
             # cnt[index] += 1
             # 下标换算难度
-            self.difficulty[case] = index / (len(RAW_DIFFICULTY_CENTERS) - 1) * (MAX_DIFFICULTY - MIN_DIFFICULTY) + MIN_DIFFICULTY
+            self.difficulty[case] = index / (len(self.RAW_DIFFICULTY_CENTERS) - 1) * (MAX_DIFFICULTY - MIN_DIFFICULTY) + MIN_DIFFICULTY
         # print(self.difficulty)
         # print(cnt)
         # plt.bar(range(len(cnt)), cnt, color='#6a005f')
@@ -195,7 +169,6 @@ class Calculator:
         # plt.ylabel('number')
         # plt.xlabel('difficulty ( x -> X )')
         # plt.show()
-
 
     def get_final_score(self):
         '''
@@ -207,7 +180,6 @@ class Calculator:
         for row in cr:
             self.final_score[",".join(row[0:2])] = float(row[3])
 
-    
     def get_code_style_score(self):
         '''
         获取用户的编码风格分数
@@ -220,7 +192,6 @@ class Calculator:
             if score > MAX_CODE_STYLE_SCORE: score = MAX_CODE_STYLE_SCORE #规整原始分数
             self.code_style_score[",".join(row[0:2])] = (score - MIN_CODE_STYLE_SCORE) / (MAX_CODE_STYLE_SCORE - MIN_CODE_STYLE_SCORE) * 100 #线性映射到 [0, 100]
 
-
     def get_valid_rate(self):
         '''
         获取用户的有效风格分数
@@ -230,7 +201,6 @@ class Calculator:
         next(cr)
         for row in cr:
             self.valid_rate[",".join(row[0:2])] = float(row[4])
-
 
     def get_test_score(self):
         '''
@@ -242,7 +212,6 @@ class Calculator:
         for row in cr:
             self.test_score[",".join(row[0:2])] = float(row[2])
 
-
     def get_case_type(self):
         '''
         获取题目类型
@@ -252,7 +221,6 @@ class Calculator:
         next(cr)
         for row in cr:
             self.case_type[row[1]] = row[2]
-
 
     def code_score(self, uid, cid):
         '''
@@ -271,7 +239,6 @@ class Calculator:
             print(key + "的最终成绩或权重缺失")
             return 0
 
-
     def style_score(self, uid, cid):
         '''
         编码风格分
@@ -288,7 +255,6 @@ class Calculator:
             print(key + "的编码风格分缺失")
         return ss
 
-
     def case_score(self, uid, cid):
         '''
         题目分=（做题分*题目难度+编码风格分）*（有效提交比例）
@@ -298,7 +264,6 @@ class Calculator:
         rte = self.valid_rate[",".join([uid, cid])]
         print("（做题分*题目难度+编码风格分）=" + str(scr) + " （有效提交比例）" + str(rte))
         return scr * rte
-
 
     def user_score(self, uid):
         '''
@@ -324,27 +289,34 @@ class Calculator:
             print()
         average = score / len(self.raw_data[uid]["cases"])
         return score, average, scores
-    
+
+    def one_user_score(self, user_id):
+        '''
+        获取某一个用户的成绩,方便执行查询
+        :param user_id: str
+        :return:
+        '''
+        row = [user_id]
+        row.extend(self.user_score(user_id))
+        # 每一类题的综合分的数组
+        type_score = {}
+        scores = row[3]
+        for case in scores:
+            type_score[self.case_type[case]] = type_score.get(self.case_type[case], []) + [scores[case]]
+        row.append(type_score)
+        return row
 
     def all_user_score(self):
         '''
         获取所有用户的计算后最终得分，并输出
         :return:
         '''
-        with open(self.RESULT, 'w', encoding="utf-8") as f:
+        with open(self.RESULT, 'w', encoding="utf-8", newline="") as f:
             writer = csv.writer(f, delimiter = ",")
             writer.writerow(["用户编号", "作业完成情况", "总评分", "每题综合分的字典", "每一类题的综合分的数组"])
             for user in self.raw_data:
-                row = [user]
-                row.extend(self.user_score(user))
-                # 每一类题的综合分的数组
-                type_score = {}
-                scores = row[3]
-                for case in scores:
-                    type_score[self.case_type[case]] = type_score.get(self.case_type[case], []) + [scores[case]]
-                row.append(type_score)
+                row = self.one_user_score(user)
                 writer.writerow(row)
-
 
 if __name__ == '__main__':
     calculator = Calculator(
@@ -353,9 +325,11 @@ if __name__ == '__main__':
         "../OurModelOutPut/Cases/score_statistics.csv",
         "../OurModelOutPut/Cases/cases_detail.csv",
         "../OurModelOutPut/Valid/valid.csv",
-        "../OurModelOutPut/Cases/test_score.csv",
-        "../OurModelOutPut/Result/all.csv"
+        "../OurModelOutPut/Cases/user_weight.csv",
+        "../OurModelOutPut/Result/all.csv",
+        '../OurModelOutPut/Cases/difficulty_center.csv'
         )
     # calculator.pre_get_raw_difficulty_centers()
     # print(calculator.user_score('60699'))
-    calculator.all_user_score()
+    # calculator.all_user_score()
+    print(calculator.one_user_score('60699'))

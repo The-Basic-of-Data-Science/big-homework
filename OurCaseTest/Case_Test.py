@@ -3,6 +3,7 @@ from OurModel import _0_RetrievePython
 from OurModel import _1_FindValid
 from OurModel import _2_Statisic
 from OurModel import _2_UserCodeStyle
+from OurModel import _3_Calculate
 import time
 import threading
 import os
@@ -78,9 +79,9 @@ class Case_thread(threading.Thread):
                                                          self.python_source)
         user_code_style.load_code_style()
         user_code_style.all_scores()
-        self.clear_py_cache()
+        self.__clear_py_cache()
 
-    def clear_py_cache(self):
+    def __clear_py_cache(self):
         '''
         清楚所有的__pycache__的文件夹
         :return:
@@ -92,9 +93,9 @@ class Case_thread(threading.Thread):
             for case_id in case_ids:
                 cache_path = user_path + "/" + case_id + "/__pycache__"
                 if(os.path.exists(cache_path)):
-                    self.local_rm(cache_path)
+                    self.__local_rm(cache_path)
 
-    def local_rm(self, dirpath):
+    def __local_rm(self, dirpath):
         '''
         递归删除对应目录下所有的文件
         :param dirpath:目标目录
@@ -105,7 +106,7 @@ class Case_thread(threading.Thread):
             for file in files:
                 filepath = os.path.join(dirpath, file).replace("\\",'/')
                 if os.path.isdir(filepath):
-                    self.local_rm(filepath)
+                    self.__local_rm(filepath)
                 else:
                     os.remove(filepath)
             os.rmdir(dirpath)
