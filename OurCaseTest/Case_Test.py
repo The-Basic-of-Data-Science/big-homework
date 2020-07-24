@@ -12,26 +12,43 @@ import time
 import threading
 import os
 import csv
+import json
 
 class Case_thread(threading.Thread):
-    def __init__(self, name, source, python_source, valid_output, statistics_output
-                 , result_output, graph_output, user_code_output):
+    def __init__(self, name, user_id):
         threading.Thread.__init__(self)
         self.name = name
-        self.source = source
-        self.python_source = python_source
-        self.valid_output = valid_output
-        self.statistics_output = statistics_output
-        self.result_output = result_output
+        self.source = "./" + str(user_id) + "/JSON_source/" + str(user_id) + ".json"
+        self.python_source = "./" + str(user_id) + "/python_source/"
+        self.valid_output = "./" + str(user_id) + "/Valid_Uploads"
+        self.statistics_output = "./" + str(user_id) + "/Statistic/"
+        self.result_output = "./" + str(user_id) + "/Result/"
+        self.graph_output = "./" + str(user_id) + "/Graph/"
+        self.user_code_output = "./" + str(user_id) + "/User_Code_Style/"
         self.result = []
-        self.graph_output = graph_output
-        self.user_code_output = user_code_output
+
+        # 从源文件中切割保存用户JSON
+        with open("../JSON/test_data.json", 'r', encoding="utf-8") as f:
+            txt = f.read()
+            users = json.loads(txt)
+            if(user_id not in users.keys()):
+                return
+            user = json.dumps({user_id:users[user_id]}, indent=4)
+
+        # 如果没有的话就初始化目录
+        if (not os.path.exists("./" + str(user_id))):
+            os.mkdir("./" + str(user_id))
+        if(not os.path.exists("./" + str(user_id) + "/JSON_source/")):
+            os.mkdir("./" + str(user_id) + "/JSON_source/")
+
+        with open(self.source, 'w', encoding="utf-8") as f2:
+            f2.write(user)
 
     def run(self):
         start = time.time()
         print("开始线程{}:{}".format(self.name, self.__time_format(start)))
         # 线程检查
-        self.all()
+        self.__all()
         end = time.time()
         print("退出线程{}:{}".format(self.name, self.__time_format(end)))
         duration = end - start
@@ -39,12 +56,16 @@ class Case_thread(threading.Thread):
         print("线程{}共计用时{}".format(self.name,
                                   time.strftime("%M minutes %S seconds",time.localtime(duration))))
 
-    def all(self):
+    def __all(self):
         '''
         完整处理一个块的预处理
         :param chunk_number: str
         :return:
         '''
+
+        if(not os.path.exists(self.source)):
+            print("没有找到这个用户")
+            return
         self.__retrieve_python()
         self.__valid_uploads()
         self.__statistics()
@@ -210,7 +231,6 @@ if __name__ == '__main__':
     '''
     CaseTest.json中最好只放置2位用户(效果好)
     '''
-    case_thread = Case_thread("Case-Test", "./JSON_source/CaseTest.json","./python_source/",
-                              "./Valid_Uploads", "./Statistic/", "./Result/", "./Graph/", "./User_Code_Style/")
+    case_thread = Case_thread("Case-Test", "3544")
     case_thread.start()
     case_thread.join()
