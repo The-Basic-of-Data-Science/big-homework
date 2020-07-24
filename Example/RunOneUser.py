@@ -210,17 +210,17 @@ class Case_thread(threading.Thread):
         # 开始制图
         plt.subplot(111, polar=True)
         # 划线
-        total_labels.sort(key=lambda x: result[x])
+        # total_labels.sort(key=lambda x: result[x])
         plt.plot(angles, data, 'bo-', color='#6a005f', linewidth=2)
-        # 从左到右，深到浅
-        colors = ['#FF0000', '#BDB76B', '#00FF00']
+        # 从左到右，绿色 褐色 红色
+        colors = [ '#00FF00', '#808000', '#FF0000']
         for i in range(len(total_labels)):
             # 画标准线
             total_label = total_labels[i]
             temp = []
             for x in range(9):
                 temp.append(result[total_label])
-            plt.plot(angles, np.array(temp), color=colors[i], linewidth=2, label=total_label)
+            plt.plot(angles, np.array(temp), color=colors[i], linewidth=1.5, label=total_label)
         # 绘制阴影
         plt.fill(angles, data, facecolor='#6a005f', alpha=0.25)
         plt.thetagrids(angles * 180 / np.pi, labels)
