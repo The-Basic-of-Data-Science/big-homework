@@ -227,8 +227,8 @@ class Case_thread(threading.Thread):
                     os.remove(filepath)
             os.rmdir(dirpath)
 
+# 推荐使用这两位用户 60778 60725
 if __name__ == '__main__':
-    # 推荐使用这两位用户 60778 60725
     user_id = "60825"
     case_thread = Case_thread("User-" + user_id, user_id)
     case_thread.start()
