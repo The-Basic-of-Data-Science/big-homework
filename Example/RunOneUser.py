@@ -71,8 +71,7 @@ class Case_thread(threading.Thread):
         # self.__user_code_style_score()
         # self.__user_valid()
         self.__user_score()
-        self.__rank_category()
-        self.__rank_all()
+        self.__rank()
 
     def __time_format(self, t):
         '''
@@ -162,47 +161,11 @@ class Case_thread(threading.Thread):
         print("Thread Name:{} end user score digest.".format(self.name))
         self.result = calculator.all_user_score()
 
-    def __rank_category(self):
+    def __rank(self):
         if(not os.path.exists(self.graph_output)):
             os.mkdir(self.graph_output)
-        for line in self.result:
-            # line:"用户编号", "作业完成情况", "总评分", "每题综合分的字典", "每一类题的综合分的数组"
-            user_id = line[0]
 
-            # 绘制雷达图
-            labels = np.array(["排序算法", "查找算法", "图结构", "树结构", "数字操作", "字符串", "线性表", "数组"])
-            data = np.zeros([8,1])
-            for i in range(len(labels)):
-                if(labels[i] in line[4].keys()):
-                    data[i] = self.__rank_search(np.mean(line[4][labels[i]]),
-                                                 "../OurModelOutPut/Rank/Category/" + labels[i] + "_rank.csv")
-            print(data)
-            # 设置字体
-            matplotlib.rcParams['font.family'] = 'SimHei'
-            matplotlib.rcParams['font.sans-serif'] = ['SimHei']
-            # 设置维度
-            nAttr = len(labels)
-            # 计算角度
-            angles = np.linspace(0, 2 * np.pi, nAttr, endpoint=False)
-            # 保证需要闭合，数据和角度
-            data = np.array(data)
-            data = np.concatenate((data, [data[0]]))
-            angles = np.concatenate((angles, [angles[0]]))
-            # 开始制图
-            plt.subplot(111, polar=True)
-            plt.plot(angles, data, 'bo-', color='#6a005f', linewidth=2)
-            plt.fill(angles, data, facecolor='#6a005f', alpha=0.25)
-            plt.thetagrids(angles * 180 / np.pi, labels)
-            plt.title(str(user_id) + '号用户各类题目排位图', pad=15)
-            plt.grid(True)
-            plt.savefig(self.graph_output + str(user_id) + "_category_score.jpg")
-            plt.show()
-
-    def __rank_all(self):
-        '''
-        编码风格、总分排位、均分排位
-        :return:
-        '''
+        # 整体分数情况统计
         user_code_style_score = []
         reader = csv.reader(open(self.user_code_output + "/user_result_" + self.name + ".csv"
                                  , 'r', encoding="utf-8"))
@@ -212,23 +175,60 @@ class Case_thread(threading.Thread):
                                                   "../OurModelOutPut/Rank/user_code_rank.csv")
         user_code_style_score.clear()
 
-        result_line = self.result[0]
-        all_score_rank = self.__rank_search(float(result_line[1]), "../OurModelOutPut/Rank/all_score_rank.csv")
-        average_score_rank = self.__rank_search(float(result_line[2]), "../OurModelOutPut/Rank/average_score_rank.csv")
+        # line:"用户编号", "作业完成情况", "总评分", "每题综合分的字典", "每一类题的综合分的数组"
+        line = self.result[0]
+        all_score_rank = self.__rank_search(float(line[1]), "../OurModelOutPut/Rank/all_score_rank.csv")
+        average_score_rank = self.__rank_search(float(line[2]), "../OurModelOutPut/Rank/average_score_rank.csv")
 
-        temp = {"编码风格排位": user_code_style_rank, "总分数排位": all_score_rank , "平均分排位": average_score_rank}
-
-        plt.bar(list(temp.keys()), list(temp.values()), color='#6a005f')
-        plt.ylim(min(temp.values()) - 10, max(temp.values()) + 10)
-        plt.title(self.name + " 号用户整体能力排位图")
-        plt.ylabel('排位(单位:%)')
-        plt.xlabel('不同指标')
-        plt.savefig(self.graph_output + str(user_id) + "_total_score.jpg")
-        plt.show()
+        result = {"编码风格排位": user_code_style_rank, "总分数排位": all_score_rank, "平均分排位": average_score_rank}
+        total_labels = list(result.keys())
 
         print(self.name + " 用户编码风格排位：" + str(user_code_style_rank) + "%")
         print(self.name + " 用户总分排位：" + str(all_score_rank) + "%")
         print(self.name + " 用户均分排位：" + str(average_score_rank) + "%")
+
+        user_id = line[0]
+        # 绘制雷达图
+        labels = np.array(["排序算法", "查找算法", "图结构", "树结构", "数字操作", "字符串", "线性表", "数组"])
+        data = np.zeros([8,1])
+        for i in range(len(labels)):
+            if(labels[i] in line[4].keys()):
+                data[i] = self.__rank_search(np.mean(line[4][labels[i]]),
+                                             "../OurModelOutPut/Rank/Category/" + labels[i] + "_rank.csv")
+                print(self.name + " 用户" + labels[i] + "排位：" + str(data[i][0]) + "%")
+        # 设置字体
+        matplotlib.rcParams['font.family'] = 'SimHei'
+        matplotlib.rcParams['font.sans-serif'] = ['SimHei']
+        # 设置维度
+        nAttr = len(labels)
+        # 计算角度
+        angles = np.linspace(0, 2 * np.pi, nAttr, endpoint=False)
+        # 保证需要闭合，数据和角度
+        data = np.array(data)
+        data = np.concatenate((data, [data[0]]))
+        angles = np.concatenate((angles, [angles[0]]))
+        # 开始制图
+        plt.subplot(111, polar=True)
+        # 划线
+        total_labels.sort(key=lambda x: result[x])
+        plt.plot(angles, data, 'bo-', color='#6a005f', linewidth=2)
+        # 从左到右，深到浅
+        colors = ['#FF0000', '#BDB76B', '#00FF00']
+        for i in range(len(total_labels)):
+            # 画标准线
+            total_label = total_labels[i]
+            temp = []
+            for x in range(9):
+                temp.append(result[total_label])
+            plt.plot(angles, np.array(temp), color=colors[i], linewidth=2, label=total_label)
+        # 绘制阴影
+        plt.fill(angles, data, facecolor='#6a005f', alpha=0.25)
+        plt.thetagrids(angles * 180 / np.pi, labels)
+        plt.title(str(user_id) + '号用户各类题目排位图(单位:%)', pad=15)
+        # 开启图例
+        plt.legend(loc='lower left', bbox_to_anchor=(0.95,0))
+        plt.savefig(self.graph_output + str(user_id) + "_rank.jpg")
+        plt.show()
 
     def __rank_search(self,my_score, target_file):
         '''
