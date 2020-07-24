@@ -94,20 +94,24 @@ class Calculator:
         '''
         distr = []
         # 布长为5
-        for i in range(-1710, 15, 5):
+        for i in range(MIN_CODE_STYLE_SCORE, 15, 1):
             distr.append(0)
         cr = csv.reader(open(self.USER_RESULT), delimiter=",")
+        total = 0
+        valid = 0
         for row in cr:
-            distr[int((float(row[3]) + 1710) // 5)] += 1
-        print(distr)
-        print(distr.index(212) * 5 - 1710)
-        print(distr.index(6114) * 5 - 1710)
+            total += 1
+            if(float(row[3]) < MIN_CODE_STYLE_SCORE):
+                continue
+            distr[int((float(row[3]) + 25))] += 1
+            valid += 1
         # 画出编码风格分数分布图
         plt.bar(range(len(distr)), distr, color='#6a005f')
         plt.ylim(min(distr), max(distr))
-        plt.title('Coding Style Score Distribution')
+        plt.title('Coding Style Score Distribution(%.2f' %(valid/total*100.0) + "%)")
         plt.ylabel('number')
-        plt.xlabel('score ( = x * 5 - 1710 )')
+        plt.xlabel('score ( = origin + 25 )')
+        plt.savefig("user-code-style.jpg")
         plt.show()
 
     def __get_raw_scores(self):
@@ -339,7 +343,7 @@ if __name__ == '__main__':
         "../OurModelOutPut/Result/all.csv",
         '../OurModelOutPut/Cases/difficulty_center.csv'
         )
-    # calculator.pre_get_raw_difficulty_centers()
+    calculator.pre_get_code_style_score_dist()
     # print(calculator.user_score('60699'))
     # calculator.all_user_score()
-    print(calculator.one_user_score('3544'))
+    # print(calculator.one_user_score('3544'))
