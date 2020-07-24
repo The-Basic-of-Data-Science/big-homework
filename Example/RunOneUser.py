@@ -47,7 +47,6 @@ class Case_thread(threading.Thread):
     def run(self):
         start = time.time()
         print("开始线程{}:{}".format(self.name, self.__time_format(start)))
-        # 线程检查
         self.__all()
         end = time.time()
         print("退出线程{}:{}".format(self.name, self.__time_format(end)))
@@ -162,6 +161,13 @@ class Case_thread(threading.Thread):
         print("Thread Name:{} end user score digest.".format(self.name))
         self.result = calculator.all_user_score()
 
+    def __rank(self):
+        '''
+        编码风格、总分排位、均分排位
+        :return:
+        '''
+
+
     def __toGraph(self):
         if(not os.path.exists(self.graph_output)):
             os.mkdir(self.graph_output)
@@ -196,6 +202,22 @@ class Case_thread(threading.Thread):
             plt.grid(True)
             plt.savefig(self.graph_output + str(user_id) + "_score.jpg")
             plt.show()
+
+    def __rank_search(self,my_score, target_file):
+        '''
+        获取排名信息
+        :param my_score: 我的分数
+        :param target_file: 查找分数的文件
+        :return:
+        '''
+        reader = csv.reader(open(target_file, encoding="utf-8"))
+        next(reader)
+        result = "100 %"
+        for line in reader:
+            result = line[2]
+            if(my_score >= eval(line[1])):
+                break
+        return result
 
     def __clear_py_cache(self):
         '''

@@ -75,9 +75,17 @@ class Rank:
         with open(self.output + "/" + filename, 'w', newline="") as f:
             writer = csv.writer(f)
             writer.writerow(title)
+            last_score = my_dict[my_dict_keys[0]]
+            last_rank = "100 %"
             for i in range(len(my_dict_keys)):
                 my_dict_key = my_dict_keys[i]
-                writer.writerow([my_dict_key, my_dict[my_dict_key], self.__format_percent(i, len(my_dict_keys))])
+                if(last_score == my_dict[my_dict_key]):
+                    this_rank = last_rank
+                else:
+                    this_rank = self.__format_percent(i, len(my_dict_keys))
+                    last_rank = this_rank
+                    last_score = my_dict[my_dict_key]
+                writer.writerow([my_dict_key, my_dict[my_dict_key], this_rank])
 
     def __format_percent(self, now, total):
         my_rank = 100 - now/total*100.0
