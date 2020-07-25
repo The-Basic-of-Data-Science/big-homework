@@ -13,7 +13,7 @@ import time
 class VerifyClass(threading.Thread):
     def __init__(self, name, reserve, output):
         '''
-        reserve鏄笉鍙傚姞璁＄畻鐨勯儴鍒�
+        reserve是不参加计算的部分
         :param reserve:
         :param output:
         '''
@@ -29,7 +29,7 @@ class VerifyClass(threading.Thread):
             os.mkdir(self.output + "source/")
 
     def __my_init(self):
-        print(self.name + " 鍚堝苟鎵�鏈夌殑JSON鏂囦欢,骞剁粺璁＄敤鎴稩D")
+        print(self.name + " 合并所有的JSON文件,并统计用户ID")
         self.user_ids = []
         self.json_source = {}
         for x in tqdm(range(1, 20)):
@@ -47,7 +47,7 @@ class VerifyClass(threading.Thread):
             f.write(txt)
         self.json_source.clear()
 
-        print(self.name + " 鍚堝苟鎵�鏈夌殑鎻愪氦璁板綍")
+        print(self.name + " 合并所有的提交记录")
         uploads = [["user_id", "case_id", "case_type", "final_score",
                              "upload_id", "code_url", "upload_score", "upload_time"]]
         for x in tqdm(range(1, 20)):
@@ -67,13 +67,13 @@ class VerifyClass(threading.Thread):
                 writer.writerow(line)
         uploads.clear()
 
-        print(self.name + " 缁熻棰樼洰淇℃伅")
+        print(self.name + " 统计题目信息")
         score_statistics = _2_Statisic.StatisticsClass(self.name,
                                                        self.output + "source/detail_without_" + str(self.reserve) + ".csv",
                                                        self.output + "source/")
         score_statistics.my_statistics()
 
-        print(self.name + " 缁熻鏈夋晥鎻愪氦鎯呭喌")
+        print(self.name + " 统计有效提交情况")
         valid_uploads = [["user_id", "case_id", "all_uploads_number",
                                  "valid_uploads_number", "valid_rate"]]
         with open("../OurModelOutPut/Valid/valid.csv", 'r', encoding='utf-8') as f2:
@@ -89,29 +89,29 @@ class VerifyClass(threading.Thread):
                 writer.writerow(line)
         valid_uploads.clear()
 
-        print(self.name + " 澶勭悊鐢ㄦ埛鍋氶鏉冮噸")
+        print(self.name + " 处理用户做题权重")
         user_weight = _3_User_Weight.GetWeightClass(self.output + "source/action_statistics.csv",
                                                     self.output + "source/user_weight.csv")
         user_weight.get_weight()
-        print(self.name + " 璁＄畻鍒嗙被涓績鎯呭喌")
+        print(self.name + " 计算分类中心情况")
         caseCalculator = _3_Case_Difficulty.CaseCalculator(self.output + "source/score_statistics.csv",
                                                            self.output + "source/difficulty_center.csv")
         caseCalculator.pre_get_raw_difficulty_centers()
 
     def run(self):
         start = time.time()
-        print("寮�濮嬬嚎绋媨}:{}".format(self.name, self.__time_format(start)))
+        print("开始线程{}:{}".format(self.name, self.__time_format(start)))
         self.verify()
         end = time.time()
-        print("閫�鍑虹嚎绋媨}:{}".format(self.name, self.__time_format(end)))
+        print("退出线程{}:{}".format(self.name, self.__time_format(end)))
         duration = end - start
 
-        print("绾跨▼{}鍏辫鐢ㄦ椂{}".format(self.name,
+        print("线程{}共计用时{}".format(self.name,
                                   time.strftime("%M minutes %S seconds",time.localtime(duration))))
 
     def __time_format(self, t):
         '''
-        杈撳叆绉掞紝鏍煎紡鍖栦负瀛楃涓�
+        输入秒，格式化为字符串
         :param t:
         :return:
         '''
@@ -120,7 +120,7 @@ class VerifyClass(threading.Thread):
 
     def verify(self):
         self.__my_init()
-        print("寮�濮嬭绠楃敤鎴峰緱鍒�")
+        print("开始计算用户得分")
         calculator = _3_Calculate.Calculator(
             self.output + "source/part.json",
             "../OurModelOutPut/Users/user_result_0_36421.csv",
@@ -132,13 +132,13 @@ class VerifyClass(threading.Thread):
             self.output + "source/difficulty_center.csv"
         )
         calculator.all_user_score()
-        # 娓呯悊鎺�
+        # 清理掉
         self.__local_rm(self.output + "source/")
 
     def __local_rm(self, dirpath):
         '''
-        閫掑綊鍒犻櫎瀵瑰簲鐩綍涓嬫墍鏈夌殑鏂囦欢
-        :param dirpath:鐩爣鐩綍
+        递归删除对应目录下所有的文件
+        :param dirpath:目标目录
         :return:
         '''
         if os.path.exists(dirpath):
@@ -156,6 +156,6 @@ if __name__ == '__main__':
     if(not os.path.exists(basic_path)):
         os.mkdir(basic_path)
     chunk_number = 19
-    thread = VerifyClass(str(chunk_number) + "鍙蜂氦鍙夋楠屾硶", chunk_number, basic_path)
+    thread = VerifyClass(str(chunk_number) + "号交叉检验法", chunk_number, basic_path)
     thread.start()
     thread.join()
