@@ -8,13 +8,19 @@ import statistics
 from tqdm import tqdm
 import urllib.request
 from operator import itemgetter
-
+import time
 
 class StatisticsClass:
     def __init__(self, name, source, output):
         self.name = name
         self.source = source
         self.output = output
+        self.test_case_dict = {}
+        with open("../OurModelOutPut/Cases/test_case_number.csv", 'r', newline="") as f:
+            reader = csv.reader(f)
+            next(reader)
+            for line in reader:
+                self.test_case_dict[line[0]] = int(line[1])
 
     def local_rm(self, dirpath):
         '''
@@ -32,28 +38,13 @@ class StatisticsClass:
                     os.remove(filepath)
             os.rmdir(dirpath)
 
-    def get_tests_number(self, url):
+    def get_tests_number(self, case_id):
         '''
         这个case的url中有几个测试用例
         :param url:
         :return: eval
         '''
-        # 创建临时文件夹
-        python_target = './temp/'
-        if(not os.path.exists(python_target)):
-            os.makedirs(python_target)
-        temp = python_target + 'temp.zip'
-        urllib.request.urlretrieve(url, temp)
-        with zipfile.ZipFile(temp, 'r') as zzz:
-            f_name = zzz.namelist()[0]
-            zzz.extractall(path=python_target)
-            with zipfile.ZipFile(python_target + f_name, 'r') as f:
-                f.extract('.mooctest/testCases.json', python_target)
-                with open(python_target + '.mooctest/testCases.json', 'r', encoding='utf-8') as f:
-                    res = f.read()
-                    data = json.loads(res)
-        self.local_rm(python_target)
-        return len(data)
+        return self.test_case_dict[case_id]
 
     def case_score_statistics(self, case_id, scores, user_ids, test_cases_number):
         '''
@@ -124,7 +115,7 @@ class StatisticsClass:
         test_cases = {}
         case_id_index = 1
         # 加载基本数据
-        with open(self.source, 'r') as f:
+        with open(self.source, 'r', encoding="gb2312") as f:
             reader = csv.reader(f)
             for line in tqdm(reader):
                 if(line[0] == 'user_id'):
@@ -132,7 +123,7 @@ class StatisticsClass:
                 if(line[case_id_index] not in scores.keys()):
                     scores[line[case_id_index]] = [line[6]]
                     user_ids[line[case_id_index]] = {line[0]:line[3]}
-                    test_cases[line[case_id_index]] = self.get_tests_number(line[5])
+                    test_cases[line[case_id_index]] = self.get_tests_number(line[1])
                 else:
                     scores[line[case_id_index]].append(line[6])
                     if(line[0] not in user_ids[line[case_id_index]].keys()):
@@ -183,7 +174,7 @@ class StatisticsClass:
                           , 'scores_change', 'final_score']]
         temps_input = []
 
-        with open(self.source, 'r',encoding='gbk') as f:
+        with open(self.source, 'r',encoding='gb2312') as f:
             reader = csv.reader(f)
             temp = []
             for line in reader:

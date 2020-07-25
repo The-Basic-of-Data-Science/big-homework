@@ -52,7 +52,7 @@ class CaseDigestClass:
     def cases_statistics(self):
         my_statistics = _2_Statisic.StatisticsClass("题目分数统计", self.output + "cases_detail.csv",self.output)
         # 统计题目难度
-        # my_statistics.cases_score_statistics()
+        my_statistics.cases_score_statistics()
         # 统计用户行为
         my_statistics.action_statistics()
 
@@ -74,9 +74,9 @@ class CaseDigestClass:
         if not os.path.exists(self.output):
             os.makedirs(self.output)
         print("Brief Union!")
-        # self.all_cases_by_type("brief")
+        self.all_cases_by_type("brief")
         print("Detail Union!")
-        # self.all_cases_by_type('detail')
+        self.all_cases_by_type('detail')
         print("Statistics for Cases!")
         self.cases_statistics()
 

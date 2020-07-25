@@ -94,7 +94,8 @@ class Calculator:
         '''
         distr = []
         # 布长为5
-        for i in range(MIN_CODE_STYLE_SCORE, 15, 1):
+        step = 1
+        for i in range(MIN_CODE_STYLE_SCORE, 15, step):
             distr.append(0)
         cr = csv.reader(open(self.USER_RESULT), delimiter=",")
         total = 0
@@ -103,15 +104,16 @@ class Calculator:
             total += 1
             if(float(row[3]) < MIN_CODE_STYLE_SCORE):
                 continue
-            distr[int((float(row[3]) + 25))] += 1
+            distr[int((float(row[3]) - MIN_CODE_STYLE_SCORE)) // step] += 1
             valid += 1
         # 画出编码风格分数分布图
+        validity = "%.2f" %(valid/total*100.0) + "%"
         plt.bar(range(len(distr)), distr, color='#6a005f')
         plt.ylim(min(distr), max(distr))
-        plt.title('Coding Style Score Distribution(%.2f' %(valid/total*100.0) + "%)")
+        plt.title("Coding Style Score Distribution(" + validity + ")")
         plt.ylabel('number')
         plt.xlabel('score ( = origin + 25 )')
-        plt.savefig("user-code-style.jpg")
+        plt.savefig("../OurModelOutPut/Users/user-code-style-" + validity + ".jpg")
         plt.show()
 
     def __get_raw_scores(self):
@@ -237,10 +239,10 @@ class Calculator:
         if key in self.final_score and key in self.test_score:
             fs = self.final_score[key]
             wt = self.test_score[key]
-            print("最终得分=" + str(fs) + " 权重=" + str(wt))
+            # print("最终得分=" + str(fs) + " 权重=" + str(wt))
             return fs * wt
         else:
-            print(key + "的最终成绩或权重缺失")
+            # print(key + "的最终成绩或权重缺失")
             return 0
 
     def style_score(self, uid, cid):
@@ -253,10 +255,10 @@ class Calculator:
         key = ",".join([uid, cid])
         if key in self.code_style_score:
             ss = STYLE_RATE * self.code_style_score[",".join([uid, cid])]
-            print("编码风格分=" + str(ss))
+            # print("编码风格分=" + str(ss))
         else:
             ss = 0
-            print(key + "的编码风格分缺失")
+            # print(key + "的编码风格分缺失")
         return ss
 
     def case_score(self, uid, cid):
@@ -266,7 +268,7 @@ class Calculator:
         '''
         scr = self.code_score(uid, cid) * self.difficulty[cid] + self.style_score(uid, cid)
         rte = self.valid_rate[",".join([uid, cid])]
-        print("（做题分*题目难度+编码风格分）=" + str(scr) + " （有效提交比例）" + str(rte))
+        # print("（做题分*题目难度+编码风格分）=" + str(scr) + " （有效提交比例）" + str(rte))
         return scr * rte
 
     def user_score(self, uid):
@@ -284,17 +286,17 @@ class Calculator:
         # 遍历此人交过的每道题目
         for case in self.raw_data[uid]["cases"]:
             cid = case["case_id"]
-            print(",".join([uid, cid]))
+            # print(",".join([uid, cid]))
             try:
                 t = self.case_score(uid, cid)
             except Exception as e:
                 print(str(e))
                 t = 0
-            print("题目分为" + str(t))
+            # print("题目分为" + str(t))
             # 加上这题的做题分
             score += t
             scores[cid] = t
-            print()
+            # print()
         average = score / len(self.raw_data[uid]["cases"])
         return score, average, scores
 

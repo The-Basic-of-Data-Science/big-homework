@@ -135,16 +135,6 @@ class FindValidClass:
                     self.check_upload_valid(user_id, case_id, upload)
         self.list_to_csv('brief',self.brief_result)
 
-    def filter(self,alpha = 0.8):
-        '''
-        TODO
-        从OurModel/JSON/filename.json中加载数据，筛选出80%的数据，写入到OurModel/AfterData/filename.json文件中
-        :param alpha:我们统计的数据占整体的比例
-        alpha [0,1],比如alpha = 0.8 -> 我们选择有效数据中间80%的数据
-        :return: boolean
-        '''
-        return True
-
     def list_to_csv(self, filename, data):
         '''
         将source中的数据格式化到CsvResult/filename.csv中去
@@ -212,7 +202,6 @@ class FindValidClass:
     def findValid(self):
         self.check_uploads_valid()
         self.brief_to_detail()
-        self.filter()
 
 if __name__ == '__main__':
     # 检查每一个应用的有效性
