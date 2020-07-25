@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from OurModelVertify import ChunkVerify
-from OurModelVertify import ErrorVerify
-from OurModelVertify import EveryChunkUnion
+from OurModelVerify import ChunkVerify
+from OurModelVerify import ErrorVerify
+from OurModelVerify import EveryChunkUnion
 
 class Verify():
     def __init__(self, name):
