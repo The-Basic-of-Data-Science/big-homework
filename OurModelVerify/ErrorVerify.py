@@ -35,7 +35,9 @@ class ErrorVerifyClass:
             abs_error = max(abs(higher_error), abs(lower_error))
             # if(abs_error <= border):
             #     valid_count += 1
-            if( (higher_error - lower_error) < border * 2):
+            if( (higher_error - lower_error) < border * 2
+                    and higher_error <= border * 1.5
+                    and abs(lower_error) <= border * 1.5):
                 valid_count += 1
             temp.extend([higher_error, lower_error, abs_error])
             self.result.append(temp)
