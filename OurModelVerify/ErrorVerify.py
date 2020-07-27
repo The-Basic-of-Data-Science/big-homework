@@ -14,7 +14,7 @@ class ErrorVerifyClass:
     def error_verify(self):
         lines = csv.reader(open(self.source,'r', encoding="utf-8"))
 
-        border = 10
+        border = 5
         count = 0
         valid_count = 0
 
@@ -47,7 +47,8 @@ class ErrorVerifyClass:
             writer.writerow(['user_id', "category", "higher_error", "lower_error", "abs_error"])
             for line in self.result:
                 writer.writerow(line)
-        print("有 %.2f " %(valid_count / count * 100.0) + "%的用户误差区间不超过 " + str(border * 2) +" %.")
+        print("有 %.2f " %(valid_count / count * 100.0) + "%的用户排位极差不超过 " + str(border * 2)
+              +" % 并且单向误差不超过 " + "%d" %(border * 1.5) + " %.")
 
 if __name__ == '__main__':
     error_verify = ErrorVerifyClass("./VerifyUnion/ranks_result.csv", "./VerifyError/")

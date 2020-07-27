@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 import os
 
 # 最低难度
-MIN_DIFFICULTY = 0.1
+MIN_DIFFICULTY = 0.7
 # 最高难度
 MAX_DIFFICULTY = 0.8
 # 风格分数占比
@@ -167,14 +167,6 @@ class Calculator:
             # cnt[index] += 1
             # 下标换算难度
             self.difficulty[case] = index / (len(self.RAW_DIFFICULTY_CENTERS) - 1) * (MAX_DIFFICULTY - MIN_DIFFICULTY) + MIN_DIFFICULTY
-        # print(self.difficulty)
-        # print(cnt)
-        # plt.bar(range(len(cnt)), cnt, color='#6a005f')
-        # plt.ylim(0, max(cnt))
-        # plt.title('Case Difficulty Distribution')
-        # plt.ylabel('number')
-        # plt.xlabel('difficulty ( x -> X )')
-        # plt.show()
 
     def get_final_score(self):
         '''
@@ -345,7 +337,7 @@ if __name__ == '__main__':
         "../OurModelOutPut/Result/all.csv",
         '../OurModelOutPut/Cases/difficulty_center.csv'
         )
-    calculator.pre_get_code_style_score_dist()
+    # calculator.pre_get_code_style_score_dist()
     # print(calculator.user_score('60699'))
-    # calculator.all_user_score()
+    calculator.all_user_score()
     # print(calculator.one_user_score('3544'))
